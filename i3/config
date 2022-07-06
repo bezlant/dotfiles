@@ -128,3 +128,6 @@ bindsym $mod+Shift+s		gaps inner current minus 5
 
 # bar toggle
 bindsym $mod+b			bar mode toggle
+
+# brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xrandr --output eDP --brightness 1
