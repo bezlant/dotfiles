@@ -8,9 +8,10 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	exec startx
 fi
 
-
+export LIBGL_ALWAYS_SOFTWARE=1 alacritty
 export XDG_CONFIG_HOME=$HOME/.config
 export LESSHISTFILE=-
+export EDITOR=vim
 
 alias ls='ls --color=auto'
 

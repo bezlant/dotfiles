@@ -30,6 +30,6 @@ fi
 setxkbmap -option caps:escape &
 feh --bg-fill --randomize ~/.wallpapers &
 clight &
-picom &
 xautolock -time 5 -locker my3lock &
+picom &
 exec i3
