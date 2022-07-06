@@ -2,6 +2,7 @@ configuration {
 	show-icons: true;
 	display-drun: "Applications:";
 	display-window: "{icon} {name}";
+	font: "mono 18";
 	modi: "drun";
 }
 
