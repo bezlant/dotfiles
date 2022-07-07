@@ -1,20 +1,40 @@
-#!/usr/bin/env zsh
+# Path to your zsh folder 
+export ZSH="$HOME/.config/zsh"
 
-ZSH=$HOME/.config/zsh
-source $ZSH/.env
-source $ZSH/.aliases
+# Theme & Plugins
+ZSH_THEME="robbyrussell"
+plugins=(git vi-mode zsh-syntax-highlighting)
 
-source $ZSH/plugins/git.zsh
-source $ZSH/plugins/theme-and-appearance.zsh
-source $ZSH/themes/robbyrussell.zsh-theme
+# Runtime script
+source $ZSH/zsh_it.sh
 
-HISTFILE=~/.cache/.zsh_history
-HISTSIZE=10000000
-SAVEHIST=10000000
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_FIND_NO_DUPS
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
+
+# Compilation flags
+export ARCHFLAGS="-arch x86_64"
+
+# For a full list of active aliases, run `alias`.
+alias ls='ls --color=auto'
+alias vim='nvim'
+alias c='xsel --clipboard --input'
+alias p='xsel --clipboard --output'
 
 bindkey -v
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	exec startx
 fi
+
+export GPG_TTY=$(tty)
+export LIBGL_ALWAYS_SOFTWARE=1 alacritty
+export XDG_CONFIG_HOME="$HOME/.config"
+export EDITOR=nvim
+export VISUAL=nvim
+export MANPATH="/usr/local/man:$MANPATH"
+export LANG=en_US.UTF-8
+export HISTFILE="$HOME/.cache/.zsh_history"
