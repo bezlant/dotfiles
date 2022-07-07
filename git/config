@@ -3,4 +3,4 @@
 	name = bezlant
 	signingkey = 78979EBC27C85DD9
 [commit]
-	gpgsing = true
+	gpgsign = true

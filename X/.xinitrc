@@ -27,7 +27,6 @@ fi
 
 # start some nice programs
 
-setxkbmap -option caps:escape &
 feh --bg-fill --randomize ~/.wallpapers &
 clight &
 xautolock -time 5 -locker my3lock &
