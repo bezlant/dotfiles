@@ -142,4 +142,3 @@ bindsym XF86MonBrightnessDown exec xrandr --output eDP --brightness 0.1
 # resizing
 bindsym 	$mod+comma resize shrink width 5 px or 5 ppt
 bindsym 	$mod+period resize grow width 5 px or 5 ppt
-

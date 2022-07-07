@@ -16,6 +16,6 @@ export EDITOR=vim
 
 alias ls='ls --color=auto'
 
-alias copy='xsel --clipboard --input'
-alias paste='xsel --clipboard --output'
+alias c='xsel --clipboard --input'
+alias p='xsel --clipboard --output'
 # End of lines configured by zsh-newuser-install
