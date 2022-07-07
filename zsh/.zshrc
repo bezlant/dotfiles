@@ -8,6 +8,7 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	exec startx
 fi
 
+export GPG_TTY=$(tty)
 export LIBGL_ALWAYS_SOFTWARE=1 alacritty
 export XDG_CONFIG_HOME=$HOME/.config
 export LESSHISTFILE=-
