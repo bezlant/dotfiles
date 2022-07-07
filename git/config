@@ -4,3 +4,14 @@
 	signingkey = 78979EBC27C85DD9
 [commit]
 	gpgsign = true
+
+[help]
+	autocorrect = 1
+
+[core]
+	editor = nvim
+
+[color]
+	branch = auto
+	diff = auto
+	status = auto

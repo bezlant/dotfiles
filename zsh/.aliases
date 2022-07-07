@@ -1,0 +1,4 @@
+alias ls='ls --color=auto'
+alias vim='nvim'
+alias c='xsel --clipboard --input'
+alias p='xsel --clipboard --output'

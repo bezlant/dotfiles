@@ -1,21 +1,20 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.cache/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+#!/usr/bin/env zsh
+
+ZSH=$HOME/.config/zsh
+source $ZSH/.env
+source $ZSH/.aliases
+
+source $ZSH/plugins/git.zsh
+source $ZSH/plugins/theme-and-appearance.zsh
+source $ZSH/themes/robbyrussell.zsh-theme
+
+HISTFILE=~/.cache/.zsh_history
+HISTSIZE=10000000
+SAVEHIST=10000000
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
 
 bindkey -v
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	exec startx
 fi
-
-export GPG_TTY=$(tty)
-export LIBGL_ALWAYS_SOFTWARE=1 alacritty
-export XDG_CONFIG_HOME=$HOME/.config
-export LESSHISTFILE=-
-export EDITOR=vim
-
-alias ls='ls --color=auto'
-
-alias c='xsel --clipboard --input'
-alias p='xsel --clipboard --output'
-# End of lines configured by zsh-newuser-install
