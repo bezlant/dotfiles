@@ -24,6 +24,7 @@ alias ls='ls --color=auto'
 alias vim='nvim'
 alias c='xsel --clipboard --input'
 alias p='xsel --clipboard --output'
+alias rr='ranger'
 
 bindkey -v
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
@@ -38,3 +39,4 @@ export VISUAL=nvim
 export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
 export HISTFILE="$HOME/.cache/.zsh_history"
+export LESSHISTFILE="$HOME/.cache/.less_history"
