@@ -3,7 +3,7 @@ export ZSH="$HOME/.config/zsh"
 
 # Theme & Plugins
 ZSH_THEME="robbyrussell"
-plugins=(vi-mode zsh-syntax-highlighting)
+plugins=(vi-mode zsh-syntax-highlighting colored-man-pages)
 
 # Runtime script
 source $ZSH/zsh_it.sh

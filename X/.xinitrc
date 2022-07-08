@@ -26,7 +26,6 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # start some nice programs
-
 feh --bg-fill --randomize ~/.wallpapers &
 clight &
 xautolock -time 5 -locker my3lock &

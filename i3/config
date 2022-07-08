@@ -2,7 +2,7 @@ set $mod Mod4
 
 font pango:monospace 8
 
-exec_always --no-startup-id "setxkbmap -option caps:escape"
+exec --no-startup-id setxkbmap -option caps:escape
 exec --no-startup-id nm-applet & 
 
 # Use pactl to adjust volume in PulseAudio.
@@ -140,3 +140,12 @@ bindsym XF86MonBrightnessDown exec xrandr --output eDP --brightness 0.1
 # resizing
 bindsym 	$mod+comma resize grow width 5 px or 5 ppt
 bindsym 	$mod+period resize shrink width 5 px or 5 ppt
+
+# ranger in the 3rd workspace
+bindsym $mod+r "workspace 3; exec --no-startup-id alacritty -e ranger"
+
+# open brave in the 4th workspace
+bindsym $mod+o "workspace 4; exec --no-startup-id /bin/brave"
+
+# open my current book in the 5th workspace
+bindsym $mod+v "workspace 5; exec --no-startup-id zathura ~/Books/current/*"  
