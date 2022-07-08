@@ -25,6 +25,7 @@ alias vim='nvim'
 alias c='xsel --clipboard --input'
 alias p='xsel --clipboard --output'
 alias rr='ranger'
+alias open='xdg-open'
 
 bindkey -v
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
@@ -40,3 +41,4 @@ export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
 export HISTFILE="$HOME/.cache/.zsh_history"
 export LESSHISTFILE="$HOME/.cache/.less_history"
+export FILE="ranger"

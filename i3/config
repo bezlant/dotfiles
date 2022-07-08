@@ -2,9 +2,7 @@ set $mod Mod4
 
 font pango:monospace 8
 
-exec --no-startup-id setxkbmap -option caps:escape 
-exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec_always --no-startup-id "setxkbmap -option caps:escape"
 exec --no-startup-id nm-applet & 
 
 # Use pactl to adjust volume in PulseAudio.
@@ -140,5 +138,5 @@ bindsym XF86MonBrightnessUp exec xrandr --output eDP --brightness 1
 bindsym XF86MonBrightnessDown exec xrandr --output eDP --brightness 0.1
 
 # resizing
-bindsym 	$mod+comma resize shrink width 5 px or 5 ppt
-bindsym 	$mod+period resize grow width 5 px or 5 ppt
+bindsym 	$mod+comma resize grow width 5 px or 5 ppt
+bindsym 	$mod+period resize shrink width 5 px or 5 ppt
