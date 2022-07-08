@@ -1,9 +1,10 @@
+exec_always --no-startup-id "$HOME/.config/i3/tray.sh"
+exec --no-startup-id setxkbmap -option caps:escape
+
 set $mod Mod4
 
 font pango:monospace 8
 
-exec --no-startup-id setxkbmap -option caps:escape
-exec --no-startup-id nm-applet & 
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status pkill -RTMIN+1 i3blocks
@@ -49,9 +50,6 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
 
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -141,11 +139,17 @@ bindsym XF86MonBrightnessDown exec xrandr --output eDP --brightness 0.1
 bindsym 	$mod+comma resize grow width 5 px or 5 ppt
 bindsym 	$mod+period resize shrink width 5 px or 5 ppt
 
-# ranger in the 3rd workspace
+# ranger in the 3rd workspace (r for ranger)
 bindsym $mod+r "workspace 3; exec --no-startup-id alacritty -e ranger"
 
-# open brave in the 4th workspace
+# open brave in the 4th workspace (o for open page)
 bindsym $mod+o "workspace 4; exec --no-startup-id /bin/brave"
 
-# open my current book in the 5th workspace
+# open my current book in the 5th workspace (v for view)
 bindsym $mod+v "workspace 5; exec --no-startup-id zathura ~/Books/Current/*"  
+
+# open up pulsemixer (a for audio)
+bindsym $mod+a  "exec --no-startup-id alacritty -e pulsemixer"
+
+# open up bluetoothctl (c for connect)
+bindsym $mod+c  "exec --no-startup-id alacritty -e bluetoothctl"
