@@ -4,11 +4,11 @@ VOLUME_MUTE="🔇"
 VOLUME_LOW="🔈"
 VOLUME_MID="🔉"
 VOLUME_HIGH="🔊"
-SOUND_LEVEL=$(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
-MUTED=$(pacmd list-sinks | awk '/muted/ {print $NF}')
+SOUND_LEVEL=$(pactl list sinks | grep '^[[:space:]]Volume:' | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
+MUTED=$(pacmd list-sinks | awk '/muted/ {print $NF}' | tail -n 1)
 
 ICON=$VOLUME_MUTE
-if [ "$MUTED" != "yes" ]
+if [ "$MUTED" = "yes" ]
 then
     ICON="$VOLUME_MUTE"
 else
