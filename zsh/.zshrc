@@ -42,3 +42,5 @@ export LANG=en_US.UTF-8
 export HISTFILE="$HOME/.cache/.zsh_history"
 export LESSHISTFILE="$HOME/.cache/.less_history"
 export FILE="ranger"
+
+setxkbmap -option caps:escape
