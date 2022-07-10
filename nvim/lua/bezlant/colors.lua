@@ -1,9 +1,8 @@
 require('lualine').setup {
     options = {
-        theme = 'dracula-nvim'
+        theme = 'dracula-nvim',
+        globalstatus = true,
     }
 }
 
 vim.cmd [[ colorscheme dracula ]]
-vim.highlight.create("Pmenu", { guibg = "None" }, false)
-
