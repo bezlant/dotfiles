@@ -1,5 +1,6 @@
--- Autoinstall packer
 local fn = vim.fn
+
+-- Autoinstall packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
     PACKER_BOOTSTRAP = fn.system {
@@ -40,12 +41,41 @@ packer.init {
 
 -- Install plugins
 return packer.startup(function(use)
+    -- plugins prerequisites
     use { "wbthomason/packer.nvim", }
     use { "nvim-lua/popup.nvim", }
     use { "nvim-lua/plenary.nvim", }
+
+    -- colors & themes
     use { "Mofiqul/dracula.nvim", }
-    use { "nvim-lualine/lualine.nvim", 
-    requires = { "kyazdani42/nvim-web-devicons", opt = true} }
+    use { "kyazdani42/nvim-web-devicons" }
+    use { "nvim-lualine/lualine.nvim" }
+
+    -- autocompletion
+    use { "hrsh7th/nvim-cmp" } -- completion engine
+    use { "hrsh7th/cmp-buffer" }
+    use { "hrsh7th/cmp-path" }
+    use { "hrsh7th/cmp-cmdline" }
+    use { "saadparwaiz1/cmp_luasnip" }
+    use { "hrsh7th/cmp-nvim-lsp" }
+    use { "hrsh7th/cmp-nvim-lua" }
+
+    -- snippets
+    use { "L3MON4D3/LuaSnip" } -- snippet engine
+    use { "rafamadriz/friendly-snippets" } -- snippets to use
+
+    -- lsp
+    use { "neovim/nvim-lspconfig" } -- enable lsp
+    use { "williamboman/nvim-lsp-installer" } -- easily install servers
+
+    -- treesitter
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+    }
+
+    -- misc
+    use { "nvim-telescope/telescope.nvim" }
 
     -- Autoconfigure after cloning packer.nvim
     if PACKER_BOOTSTRAP then

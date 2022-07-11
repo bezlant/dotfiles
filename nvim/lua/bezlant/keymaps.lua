@@ -3,9 +3,7 @@ local map = require("bezlant.utils").map
 local opts = { noremap = true }
 
 -- Leader
-map("", ",", "<Nop>", opts)
 vim.g.mapleader = ","
-vim.g.maplocalleader = ","
 
 -- Easier window 
 map("n", "<C-h>", "<C-w>h", opts)
@@ -42,3 +40,7 @@ map("t", "<C-h>", "<C-\\><C-N><C-w>h", {})
 map("t", "<C-j>", "<C-\\><C-N><C-w>j", {})
 map("t", "<C-k>", "<C-\\><C-N><C-w>k", {})
 map("t", "<C-l>", "<C-\\<C-N><C-w>l", {})
+
+-- Plugins config
+-- Telescope
+map("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ previewer = false }))<cr>", opts)

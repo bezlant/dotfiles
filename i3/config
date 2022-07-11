@@ -22,7 +22,7 @@ bindsym $mod+d 		exec --no-startup-id "rofi -modi drun,run -show drun"
 
 # change focus, commented out are the multi-monitor settings
 bindsym $mod+h 		focus left
-bindsym $mod+Shift+h 	move left 30
+bindsym $mod+Shift+h    move left 30
 # bindsym $mod+Ctrl+h 	move workspace to output left	
 
 bindsym $mod+j 		focus down
