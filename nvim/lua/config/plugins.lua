@@ -17,6 +17,8 @@ local builtin_plugs = {
     'netrwPlugin',
     'netrwSettings',
     'netrwFileHandlers',
+    'tutor',
+    'tohtml'
 }
 
 for i = 1, #builtin_plugs do
@@ -90,18 +92,7 @@ return packer.startup(function(use)
 
     -- lsp
     use { "williamboman/nvim-lsp-installer" } -- easily install servers
-    use {
-        "neovim/nvim-lspconfig",
-        opt = true,
-        event = "BufReadPre",
-        wants = { "nvim-lsp-installer", },
-        config = function()
-            require("config.lsp").setup()
-        end,
-        requires = {
-            "williamboman/nvim-lsp-installer",
-        },
-    } -- enable lsp
+    use { "neovim/nvim-lspconfig" } -- enable lsp
 
     -- treesitter
     use {

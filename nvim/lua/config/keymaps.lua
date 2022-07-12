@@ -1,11 +1,11 @@
 -- map(mode, key, command, options)
-local map = require("utils").map
+local map = require("config.utils").map
 local opts = { noremap = true }
 
 -- Leader
 vim.g.mapleader = ","
 
--- Easier window 
+-- Easier window
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
@@ -18,8 +18,8 @@ map("n", "<leader>e", ":Lex 30<cr>", opts)
 map("n", "<leader>h", ":bprevious<cr>", opts)
 map("n", "<leader>l", ":bnext<cr>", opts)
 
--- Quick escape 
-map("i", "jk", "<ESC>", opts) 
+-- Quick escape
+map("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Moving text
@@ -43,4 +43,6 @@ map("t", "<C-l>", "<C-\\<C-N><C-w>l", {})
 
 -- Plugins config
 -- Telescope
-map("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ previewer = false }))<cr>", opts)
+map("n", "<leader>f",
+    "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ previewer = false }))<cr>",
+    opts)
