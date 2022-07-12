@@ -1,5 +1,5 @@
 -- map(mode, key, command, options)
-local map = require("bezlant.utils").map
+local map = require("utils").map
 local opts = { noremap = true }
 
 -- Leader

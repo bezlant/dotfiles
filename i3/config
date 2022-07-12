@@ -12,42 +12,42 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # start a terminal
-bindsym $mod+Return 	exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Return 	    exec --no-startup-id i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+q 		kill
+bindsym $mod+q 		        kill
 
 # A more modern dmenu replacement is rofi:
-bindsym $mod+d 		exec --no-startup-id "rofi -modi drun,run -show drun"
+bindsym $mod+d 		        exec --no-startup-id "rofi -modi drun,run -show drun"
 
 # change focus, commented out are the multi-monitor settings
-bindsym $mod+h 		focus left
-bindsym $mod+Shift+h    move left 30
+bindsym $mod+h 		        focus left
+bindsym $mod+Shift+h        move left 30
 # bindsym $mod+Ctrl+h 	move workspace to output left	
 
-bindsym $mod+j 		focus down
-bindsym $mod+Shift+j 	move down 30
+bindsym $mod+j 		        focus down
+bindsym $mod+Shift+j 	    move down 30
 # bindsym $mod+Ctrl+j 	move workspace to output down	
 
-bindsym $mod+k 		focus up
-bindsym $mod+Shift+k 	move up 30
+bindsym $mod+k 		        focus up
+bindsym $mod+Shift+k 	    move up 30
 # bindsym $mod+Ctrl+k 	move workspace to output up	
 
-bindsym $mod+l 		focus right
-bindsym $mod+Shift+l 	move right 30
+bindsym $mod+l 		        focus right
+bindsym $mod+Shift+l 	    move right 30
 # bindsym $mod+Ctrl+l 	move workspace to output right	
 
 # toggle split orientation
-bindsym $mod+t split toggle
+bindsym $mod+t              split toggle
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+f              fullscreen toggle
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space    floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+space          focus mode_toggle
 
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -86,10 +86,10 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r            restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e            exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # status bar & status block configuration
 bar {
@@ -112,26 +112,26 @@ bar {
 set $term --no-startup-id $TERMINAL
 
 # switch between workspaces
-bindsym $mod+Escape		workspace prev
+bindsym $mod+Escape		        workspace prev
 
 # lock screen
-bindsym $mod+Shift+q		exec "my3lock"
+bindsym $mod+Shift+q		    exec "my3lock"
 
 # default gaps 
 for_window [class="^.*"] border pixel 2
-gaps inner 5
+gaps inner 10
 
 # resize gaps
-bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
-bindsym $mod+s			gaps inner current plus 5	
-bindsym $mod+Shift+s		gaps inner current minus 5	
+bindsym $mod+Shift+d		    gaps inner current set 0; gaps outer current set 0
+bindsym $mod+s			        gaps inner current plus 5	
+bindsym $mod+Shift+s		    gaps inner current minus 5	
 
 # bar toggle
-bindsym $mod+b			bar mode toggle
+bindsym $mod+b			        bar mode toggle
 
 # brightness controls
-bindsym XF86MonBrightnessUp "exec --no-startup-id brightnessctl set 10%+"
-bindsym XF86MonBrightnessDown "exec --no-startup-id brightnessctl set 10%-"
+bindsym XF86MonBrightnessUp     "exec --no-startup-id brightnessctl set 10%+"
+bindsym XF86MonBrightnessDown   "exec --no-startup-id brightnessctl set 10%-"
 
 # resizing
 bindsym 	$mod+comma resize grow width 5 px or 5 ppt
@@ -144,7 +144,7 @@ bindsym $mod+r "workspace 3; exec --no-startup-id alacritty -e ranger"
 bindsym $mod+o "workspace 4; exec --no-startup-id /bin/brave"
 
 # open my current book in the 5th workspace (v for view)
-bindsym $mod+v "workspace 5; exec --no-startup-id zathura ~/Books/Current/*"  
+bindsym $mod+v "workspace 5; gaps inner current set 0; bar mode hide; exec --no-startup-id zathura ~/Books/Current/*"  
 
 # open up pulsemixer (a for audio)
 bindsym $mod+a  "exec --no-startup-id alacritty -e pulsemixer"
@@ -154,3 +154,9 @@ bindsym $mod+m  "exec --no-startup-id blueman-manager"
 
 # alt tab like behaviour
 bindsym $mod+Tab workspace back_and_forth
+
+# take a screenshot (c for capture)
+bindsym --release $mod+c exec --no-startup-id scrot -s
+
+# make a gif with peek (p for peek)
+bindsym --release $mod+p exec --no-startup-id peek

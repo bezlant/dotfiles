@@ -1,6 +1,30 @@
-local fn = vim.fn
+local builtin_plugs = {
+    'gzip',
+    'tar',
+    'tarPlugin',
+    'zip',
+    'zipPlugin',
+    'getscript',
+    'getscriptPlugin',
+    'vimball',
+    'vimballPlugin',
+    'matchit',
+    'matchparen',
+    '2html_plugin',
+    'logiPat',
+    'rrhelper',
+    'netrw',
+    'netrwPlugin',
+    'netrwSettings',
+    'netrwFileHandlers',
+}
 
--- Autoinstall packer
+for i = 1, #builtin_plugs do
+    vim.g['loaded_' .. builtin_plugs[i]] = true
+end
+
+local fn = vim.fn -- Autoinstall packer
+
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
     PACKER_BOOTSTRAP = fn.system {
@@ -65,8 +89,19 @@ return packer.startup(function(use)
     use { "rafamadriz/friendly-snippets" } -- snippets to use
 
     -- lsp
-    use { "neovim/nvim-lspconfig" } -- enable lsp
     use { "williamboman/nvim-lsp-installer" } -- easily install servers
+    use {
+        "neovim/nvim-lspconfig",
+        opt = true,
+        event = "BufReadPre",
+        wants = { "nvim-lsp-installer", },
+        config = function()
+            require("config.lsp").setup()
+        end,
+        requires = {
+            "williamboman/nvim-lsp-installer",
+        },
+    } -- enable lsp
 
     -- treesitter
     use {
@@ -76,6 +111,7 @@ return packer.startup(function(use)
 
     -- misc
     use { "nvim-telescope/telescope.nvim" }
+    use { "windwp/nvim-autopairs" }
 
     -- Autoconfigure after cloning packer.nvim
     if PACKER_BOOTSTRAP then
