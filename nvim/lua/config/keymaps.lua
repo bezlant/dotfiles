@@ -11,9 +11,6 @@ map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
--- Explorer
-map("n", "<leader>e", ":Lex 30<cr>", opts)
-
 -- Buffer navigation
 map("n", "<leader>h", ":bprevious<cr>", opts)
 map("n", "<leader>l", ":bnext<cr>", opts)
@@ -46,3 +43,6 @@ map("t", "<C-l>", "<C-\\<C-N><C-w>l", {})
 map("n", "<leader>f",
     "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ previewer = false }))<cr>",
     opts)
+
+-- NvimTree
+map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)

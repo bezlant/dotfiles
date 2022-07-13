@@ -8,8 +8,8 @@ end
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 M.capabilities.offsetEncoding = { "utf-8 " }
+M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 
 M.setup = function()
     local signs = {
@@ -32,15 +32,12 @@ M.setup = function()
     })
 
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-        -- Enable underline, use default values
-        underline = true,
+        underline = false,
         signs = {
             active = signs,
         },
         severity_sort = true,
-        -- Enable virtual text, override spacing to 4
-        virtual_text = true,
-        -- Disable a feature
+        virtual_text = false,
         update_in_insert = false,
         float = {
             focusable = false,
@@ -56,11 +53,10 @@ end
 local function lsp_keymaps(bufnr)
     local opts = { noremap = true, silent = true }
     local bufmap = vim.api.nvim_buf_set_keymap
-    bufmap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-    bufmap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-    bufmap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    bufmap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-    bufmap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+    -- bufmap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+    -- bufmap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+    -- bufmap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+    -- bufmap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
     bufmap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
     bufmap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
     bufmap(
@@ -70,7 +66,8 @@ local function lsp_keymaps(bufnr)
         '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>',
         opts
     )
-    bufmap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+    -- bufmap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+    -- bufmap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
     -- bufmap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
     -- bufmap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
     -- bufmap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
@@ -86,9 +83,8 @@ M.on_attach = function(client, bufnr)
             group = augroup,
             buffer = bufnr,
             callback = function()
-                -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
                 if #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR }) == 0 then
-                    vim.lsp.buf.formatting_seq_sync()
+                    vim.lsp.buf.format({ bufnr = bufnr })
                 else
                     vim.notify("Can't save current buffer! Error exists. Please, fix them first.")
                 end

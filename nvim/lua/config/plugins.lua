@@ -103,6 +103,8 @@ return packer.startup(function(use)
     -- misc
     use { "nvim-telescope/telescope.nvim" }
     use { "windwp/nvim-autopairs" }
+    use { "numToStr/Comment.nvim" } -- Easily comment stuff
+    use { "kyazdani42/nvim-tree.lua" }
 
     -- Autoconfigure after cloning packer.nvim
     if PACKER_BOOTSTRAP then
