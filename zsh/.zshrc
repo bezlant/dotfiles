@@ -3,9 +3,6 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	exec startx
 fi
 
-# Ramap caps to escape
-setxkbmap -option caps:escape
-
 # Path to zsh folder 
 export ZSH="$HOME/.config/zsh"
 
@@ -17,12 +14,18 @@ plugins=(vi-mode zsh-syntax-highlighting colored-man-pages)
 source $ZSH/zsh_it.sh
 
 # For a full list of active aliases, run `alias`.
-alias ls='ls --color=auto'
 alias vim='nvim'
+alias vi='nvim'
 alias c='xsel --clipboard --input'
 alias p='xsel --clipboard --output'
 alias rr='ranger'
 alias open='xdg-open'
+alias vg='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind_result.txt'
+alias ll="exa -l -g --icons"
+alias la="ll -a"
+alias ls="exa --icons -F --sort=size"
+alias tree="ls -T"
+alias l="la"
 
 # Exports
 export GPG_TTY=$(tty)

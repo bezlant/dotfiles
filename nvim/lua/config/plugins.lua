@@ -101,10 +101,12 @@ return packer.startup(function(use)
     }
 
     -- misc
-    use { "nvim-telescope/telescope.nvim" }
-    use { "windwp/nvim-autopairs" }
+    use { "nvim-telescope/telescope.nvim" } -- Are you ready for a journey?
+    use { "windwp/nvim-autopairs" } -- A decent auto pair for brackets
     use { "numToStr/Comment.nvim" } -- Easily comment stuff
-    use { "kyazdani42/nvim-tree.lua" }
+    use { "kyazdani42/nvim-tree.lua" } -- NerdTree replacement
+    use { "akinsho/bufferline.nvim", tag = "v2.*" } -- Visual buffers
+    use { "moll/vim-bbye" }
 
     -- Autoconfigure after cloning packer.nvim
     if PACKER_BOOTSTRAP then
