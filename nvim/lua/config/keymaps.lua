@@ -22,14 +22,14 @@ map("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Moving text
-map("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
-map("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+map("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", opts)
+map("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", opts)
 
 -- Visual block
--- map("x", "J", ":m '>+1<CR>gv=gv", opts)
--- map("x", "K", ":m '<-2<CR>gv=gv", opts)
-map("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
-map("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+-- map("x", "J", "<cmd>m '>+1<CR>gv=gv", opts)
+-- map("x", "K", "<cmd>m '<-2<CR>gv=gv", opts)
+map("x", "<A-j>", "<cmd>m '>+1<CR>gv=gv", opts)
+map("x", "<A-k>", "<cmd>m '<-2<CR>gv=gv", opts)
 
 -- Don't copy on paste
 map("v", "p", "\"_dP", opts)
@@ -50,14 +50,14 @@ map("n", "<leader>f",
     opts)
 
 -- NvimTree
-map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
 
 -- Bbye & Buffers
-map("n", "<leader>bd", ":Bdelete %<CR>", opts)
-map("n", "<leader>h", ":bprevious<cr>", opts)
-map("n", "<leader>l", ":bnext<cr>", opts)
+map("n", "<leader>bd", "<cmd>Bdelete %<CR>", opts)
+map("n", "<leader>h", "<cmd>bprevious<cr>", opts)
+map("n", "<leader>l", "<cmd>bnext<cr>", opts)
 
 -- Custom
-map("n", "<leader>w", ":w<CR>", opts)
-map("n", "<leader>so", ":so<CR>", opts)
-map("n", "<leader><CR>", ":noh<CR>", opts)
+map("n", "<leader>w", "<cmd>w<CR>", opts)
+map("n", "<leader>so", "<cmd>so<CR>", opts)
+map("n", "<leader><CR>", "<cmd>noh<CR>", opts)

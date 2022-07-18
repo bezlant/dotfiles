@@ -1,7 +1,7 @@
 local options = {
 	backup = false,
 	cmdheight = 1,
-	completeopt = { "menuone", "noselect" },
+	completeopt = { "menu", "menuone", "noselect" },
 	conceallevel = 0,
 	expandtab = true,
 	fileencoding = "utf-8",

@@ -84,7 +84,6 @@ return packer.startup(function(use)
     use { "hrsh7th/cmp-cmdline" }
     use { "saadparwaiz1/cmp_luasnip" }
     use { "hrsh7th/cmp-nvim-lsp" }
-    use { "hrsh7th/cmp-nvim-lua" }
 
     -- snippets
     use { "L3MON4D3/LuaSnip" } -- snippet engine
@@ -93,6 +92,7 @@ return packer.startup(function(use)
     -- lsp
     use { "williamboman/nvim-lsp-installer" } -- easily install servers
     use { "neovim/nvim-lspconfig" } -- enable lsp
+    use { "jose-elias-alvarez/null-ls.nvim" } -- enable lsp
 
     -- treesitter
     use {

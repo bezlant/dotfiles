@@ -10,12 +10,12 @@ pairs.setup {
 
     fast_wrap = {
         map = '<M-e>',
-        chars = { '{', '[', '(', '"', "'", },
-        pattern = [=[[%'%"%)%?%]%)%}%,]]=],
+        chars = { '{', '[', '(', '"', "'" },
+        pattern = [=[[%'%"%)%>%]%)%}%,]]=],
         end_key = '$',
-        keys = 'qwertyuiopzxcvbnmasdfghkl',
+        keys = 'qwertyuiopzxcvbnmasdfghjkl',
         check_comma = true,
         highlight = 'Search',
-        highlight_grey = 'Comment',
+        highlight_grey='Comment'
     },
 }

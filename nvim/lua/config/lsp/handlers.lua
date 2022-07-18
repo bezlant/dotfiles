@@ -1,14 +1,12 @@
-local M = {}
-
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
-    vim.notify("Error loading cmp_nvim_lsp :(")
+local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not ok then
+    vim.notify("Can't load the cmp_nvim_lsp plugin! :(")
     return
 end
 
+local M = {}
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-M.capabilities.offsetEncoding = { "utf-8 " }
 M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 
 M.setup = function()
@@ -33,9 +31,7 @@ M.setup = function()
 
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
         underline = false,
-        signs = {
-            active = signs,
-        },
+        signs = { active = signs },
         severity_sort = true,
         virtual_text = false,
         update_in_insert = false,
@@ -50,48 +46,22 @@ M.setup = function()
     })
 end
 
-local function lsp_keymaps(bufnr)
-    local opts = { noremap = true, silent = true }
-    local bufmap = vim.api.nvim_buf_set_keymap
-    -- bufmap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-    -- bufmap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-    -- bufmap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    -- bufmap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-    bufmap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
-    bufmap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-    bufmap(
-        bufnr,
-        "n",
-        "gl",
-        '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>',
-        opts
-    )
-    -- bufmap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-    -- bufmap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-    -- bufmap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-    -- bufmap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-    -- bufmap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-    -- bufmap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+local map = function(key, command)
+    vim.keymap.set("n", key, command, { buffer = 0 })
 end
 
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local function lsp_keymaps()
+    map('K', vim.lsp.buf.hover)
+    map('gd', vim.lsp.buf.definition)
+    map('<leader>dj', vim.diagnostic.goto_next)
+    map('<leader>dk', vim.diagnostic.goto_prev)
+    map('<leader>dt', '<cmd>Telescope diagnostics<CR>')
+    map('<leader>r', vim.lsp.buf.rename)
+    map('<leader>a', vim.lsp.buf.code_action)
+end
 
-M.on_attach = function(client, bufnr)
-    if client.supports_method("textDocument/formatting") then
-        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            group = augroup,
-            buffer = bufnr,
-            callback = function()
-                if #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR }) == 0 then
-                    vim.lsp.buf.format({ bufnr = bufnr })
-                else
-                    vim.notify("Can't save current buffer! Error exists. Please, fix them first.")
-                end
-            end,
-        })
-    end
-    lsp_keymaps(bufnr)
+M.on_attach = function()
+    lsp_keymaps()
 end
 
 return M

@@ -23,7 +23,7 @@ alias open='xdg-open'
 alias vg='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind_result.txt'
 alias ll="exa -l -g --icons"
 alias la="ll -a"
-alias ls="exa --icons -F --sort=size"
+alias ls="exa --icons -F --sort=name --oneline"
 alias tree="ls -T"
 alias l="la"
 

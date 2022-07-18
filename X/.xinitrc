@@ -28,6 +28,6 @@ fi
 # start some nice programs
 feh --bg-fill --randomize ~/.wallpapers &
 clight &
-xautolock -time 5 -locker my3lock &
+xautolock -time 15 -locker my3lock &
 picom --experimental-backends &
 exec i3
