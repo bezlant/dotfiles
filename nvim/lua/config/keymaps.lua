@@ -1,7 +1,7 @@
 local status_ok, utils = pcall(require, "config.utils")
 if not status_ok then
-    vim.notify("Utils not found, check if the file exits in config/utils!")
-    return
+	vim.notify("Utils not found, check if the file exits in config/utils!")
+	return
 end
 
 -- map(mode, key, command, options)
@@ -11,7 +11,7 @@ local opts = { noremap = true }
 -- Leader
 vim.g.mapleader = ","
 
--- Easier window
+-- Easier pane navigation
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
@@ -32,22 +32,19 @@ map("x", "<A-j>", "<cmd>m '>+1<CR>gv=gv", opts)
 map("x", "<A-k>", "<cmd>m '<-2<CR>gv=gv", opts)
 
 -- Don't copy on paste
-map("v", "p", "\"_dP", opts)
-
--- Terminal navigation improved
-map("t", "<C-h>", "<C-\\><C-N><C-w>h", {})
-map("t", "<C-j>", "<C-\\><C-N><C-w>j", {})
-map("t", "<C-k>", "<C-\\><C-N><C-w>k", {})
-map("t", "<C-l>", "<C-\\<C-N><C-w>l", {})
+map("v", "p", '"_dP', opts)
 
 -- Map global register to '|'
-map("n", "\"|", "\"+", opts)
+map("n", '"|', '"+', opts)
 
 -- Plugins config
 -- Telescope
-map("n", "<leader>f",
-    "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ previewer = false }))<cr>",
-    opts)
+map(
+	"n",
+	"<leader>f",
+	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ previewer = false, layout_config = { height = 0.2 }}))<cr>",
+	opts
+)
 
 -- NvimTree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)

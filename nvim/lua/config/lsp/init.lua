@@ -38,3 +38,4 @@ for _, server in pairs(servers) do
 end
 
 require("config.lsp.handlers").setup()
+require("config.lsp.null-ls")

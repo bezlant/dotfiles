@@ -84,6 +84,7 @@ return packer.startup(function(use)
     use { "hrsh7th/cmp-cmdline" }
     use { "saadparwaiz1/cmp_luasnip" }
     use { "hrsh7th/cmp-nvim-lsp" }
+    use { "hrsh7th/cmp-nvim-lua" }
 
     -- snippets
     use { "L3MON4D3/LuaSnip" } -- snippet engine
@@ -92,7 +93,7 @@ return packer.startup(function(use)
     -- lsp
     use { "williamboman/nvim-lsp-installer" } -- easily install servers
     use { "neovim/nvim-lspconfig" } -- enable lsp
-    use { "jose-elias-alvarez/null-ls.nvim" } -- enable lsp
+    use { "jose-elias-alvarez/null-ls.nvim" } -- enable linters & stylers
 
     -- treesitter
     use {
@@ -106,7 +107,9 @@ return packer.startup(function(use)
     use { "numToStr/Comment.nvim" } -- Easily comment stuff
     use { "kyazdani42/nvim-tree.lua" } -- NerdTree replacement
     use { "akinsho/bufferline.nvim", tag = "v2.*" } -- Visual buffers
-    use { "moll/vim-bbye" }
+    use { "moll/vim-bbye" } -- Close buffers without closing vim
+    use { "akinsho/toggleterm.nvim", tag = 'v2.*' } -- Better terminal
+    use { "lewis6991/impatient.nvim" }
 
     -- Autoconfigure after cloning packer.nvim
     if PACKER_BOOTSTRAP then
