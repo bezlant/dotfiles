@@ -53,8 +53,24 @@ map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
 map("n", "<leader>bd", "<cmd>Bdelete %<CR>", opts)
 map("n", "<leader>h", "<cmd>bprevious<cr>", opts)
 map("n", "<leader>l", "<cmd>bnext<cr>", opts)
+map("n", "<leader>ba", "<cmd>bufdo :Bdelete<CR>", opts)
+
+-- Tabs
+map("n", "<leader>tn", "<cmd>tabnew<cr>", opts)
+map("n", "<leader>to", "<cmd>tabonly<cr>", opts)
+map("n", "<leader>tc", "<cmd>tabclose<cr>", opts)
+map("n", "<leader>tm", "<cmd>tabmove<cr>", opts)
+map("n", "<leader>t<leader>", "<cmd>tabnext<cr>", opts)
 
 -- Custom
+-- Save on leader + w
 map("n", "<leader>w", "<cmd>w<CR>", opts)
+
+-- Source fresh config
 map("n", "<leader>so", "<cmd>so<CR>", opts)
+
+-- Highligts off
 map("n", "<leader><CR>", "<cmd>noh<CR>", opts)
+
+-- Jump to the first non blanck character
+map("n", "0", "^", opts)

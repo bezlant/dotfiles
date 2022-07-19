@@ -28,15 +28,28 @@ local options = {
 	updatetime = 300,
 	wrap = true,
 	writebackup = false,
-    splitbelow = true,
-    splitright = true,
+	splitbelow = true,
+	splitright = true,
+	incsearch = true,
 }
 
 for key, value in pairs(options) do
 	vim.opt[key] = value
 end
 
-vim.cmd [[ set whichwrap+=<,>,[,],h,l ]]
-vim.cmd [[ set formatoptions-=cro ]]
-vim.cmd [[ set foldmethod=expr ]]
-vim.cmd [[ set foldexpr=nvim_treesitter#foldexpr() ]]
+-- Folding with tresitter
+vim.cmd([[ set foldmethod=expr ]])
+vim.cmd([[ set foldexpr=nvim_treesitter#foldexpr() ]])
+
+-- Autoread buffer on an external change
+vim.cmd([[ set autoread ]])
+vim.cmd([[ au FocusGained,BufEnter * checktime ]])
+
+vim.cmd([[ set backspace=eol,start,indent]])
+vim.cmd([[ set formatoptions-=cro ]])
+
+-- Buffer behavior
+vim.cmd([[ set switchbuf=useopen,usetab,newtab ]])
+
+-- Return to the previous location in the file on open
+vim.cmd([[ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif ]])
