@@ -46,7 +46,9 @@ vim.cmd([[ set autoread ]])
 vim.cmd([[ au FocusGained,BufEnter * checktime ]])
 
 vim.cmd([[ set backspace=eol,start,indent]])
-vim.cmd([[ set formatoptions-=cro ]])
+-- Prevent annoying comment continuation when inserting a new line with 'Oo'
+vim.cmd([[ set formatoptions-=jcro ]])
+vim.cmd([[ set formatoptions+=j ]])
 
 -- Buffer behavior
 vim.cmd([[ set switchbuf=useopen,usetab,newtab ]])
