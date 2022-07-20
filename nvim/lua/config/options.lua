@@ -25,7 +25,7 @@ local options = {
 	termguicolors = true,
 	timeoutlen = 1000,
 	undofile = true,
-	updatetime = 300,
+	updatetime = 50,
 	wrap = true,
 	writebackup = false,
 	splitbelow = true,
@@ -41,17 +41,36 @@ end
 vim.cmd([[ set foldmethod=expr ]])
 vim.cmd([[ set foldexpr=nvim_treesitter#foldexpr() ]])
 
--- Autoread buffer on an external change
-vim.cmd([[ set autoread ]])
-vim.cmd([[ au FocusGained,BufEnter * checktime ]])
-
 vim.cmd([[ set backspace=eol,start,indent]])
--- Prevent annoying comment continuation when inserting a new line with 'Oo'
-vim.cmd([[ set formatoptions-=jcro ]])
-vim.cmd([[ set formatoptions+=j ]])
+
+-- Remove useless messages in statusline
+vim.cmd([[ set shortmess+=c ]])
 
 -- Buffer behavior
 vim.cmd([[ set switchbuf=useopen,usetab,newtab ]])
 
+-- Autocommands
 -- Return to the previous location in the file on open
-vim.cmd([[ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif ]])
+vim.api.nvim_create_autocmd(
+	"BufReadPost",
+	{ command = [[if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]] }
+)
+-- Autoread buffer on an external change
+vim.api.nvim_create_autocmd("FocusGained,BufEnter", { command = "checktime" })
+
+-- Hightlight yank
+vim.api.nvim_create_autocmd("TextYankPost", { command = "silent! lua vim.highlight.on_yank()" })
+
+-- Easily close useless buffers
+vim.api.nvim_create_autocmd(
+	"FileType",
+	{ pattern = { "help", "startuptime", "qf", "lspinfo" }, command = [[ nnoremap <buffer><silent> q :close<CR> ]] }
+)
+
+vim.api.nvim_create_autocmd("FileType", { pattern = { "man" }, command = [[ nnoremap <buffer><silent> q :quit<CR> ]] })
+
+-- Fix that god damn formatoptions (for some reason have to do it on every BufEnter)
+-- Prevent annoying comment continuation when inserting a new line with 'O'
+vim.api.nvim_create_autocmd("BufEnter", {
+	command = "set formatoptions-=cro",
+})
