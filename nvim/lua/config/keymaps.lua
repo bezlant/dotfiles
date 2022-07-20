@@ -37,18 +37,6 @@ map("v", "p", '"_dP', opts)
 -- Map global register to '|'
 map("n", '"|', '"+', opts)
 
--- Plugins config
--- Telescope
-map(
-	"n",
-	"<leader>f",
-	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ previewer = false, layout_config = { height = 0.2 }}))<cr>",
-	opts
-)
-
--- NvimTree
-map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
-
 -- Bbye & Buffers
 map("n", "<leader>bd", "<cmd>Bdelete %<CR>", opts)
 map("n", "<leader>h", "<cmd>bprevious<cr>zz", opts)
@@ -99,3 +87,25 @@ map("n", "N", "Nzzzv", opts)
 
 -- Get to the current folder
 map("n", "<leader>cd", "<cmd>cd %:p:h<cr><cmd>:pwd<cr>", opts)
+
+-- Plugins config
+-- Telescope
+map(
+	"n",
+	"<C-f>",
+	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ previewer = false, layout_config = { height = 0.2 }}))<cr>",
+	opts
+)
+
+map(
+	"n",
+	"<leader>f",
+	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ previewer = false, layout_config = { height = 0.2 }}))<cr>",
+	opts
+)
+
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+
+-- NvimTree
+map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
