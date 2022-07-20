@@ -75,8 +75,8 @@ map("n", "<leader><CR>", "<cmd>noh<CR>", opts)
 -- Jump to the first non blanck character
 map("n", "0", "^", opts)
 
--- Stop yanking the damn '\n'
-map("n", "Y", "yg$", opts)
+-- Stop yanking the damn '\n' (Yanky.nvim does it by default)
+-- map("n", "Y", "yg$", opts)
 
 -- Scrolling improved
 map("n", "<C-d>", "<C-d>zz", opts)
@@ -86,9 +86,16 @@ map("n", "<C-u>", "<C-u>zz", opts)
 map("n", "<leader>y", '"+y', opts)
 map("v", "<leader>y", '"+y', opts)
 
+-- Easy paste from the system clipboard
+map("n", "<leader>p", '"+p', opts)
+map("v", "<leader>p", '"+p', opts)
+
 -- You need this
 map("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
 
 -- Search improved
 map("n", "n", "nzzzv", opts)
 map("n", "N", "Nzzzv", opts)
+
+-- Get to the current folder
+map("n", "<leader>cd", "<cmd>cd %:p:h<cr><cmd>:pwd<cr>", opts)

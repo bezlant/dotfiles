@@ -31,6 +31,7 @@ local options = {
 	splitbelow = true,
 	splitright = true,
 	incsearch = true,
+	linebreak = true,
 }
 
 for key, value in pairs(options) do
@@ -55,11 +56,9 @@ vim.api.nvim_create_autocmd(
 	"BufReadPost",
 	{ command = [[if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]] }
 )
--- Autoread buffer on an external change
-vim.api.nvim_create_autocmd("FocusGained,BufEnter", { command = "checktime" })
 
--- Hightlight yank
-vim.api.nvim_create_autocmd("TextYankPost", { command = "silent! lua vim.highlight.on_yank()" })
+-- Autoread buffer on an external change
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, { command = "checktime" })
 
 -- Easily close useless buffers
 vim.api.nvim_create_autocmd(
