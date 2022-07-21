@@ -13,14 +13,13 @@
 ### Neovim
 
 The config aims to be as small as possible, simply for comfortable coding without millions of popus and alarms going off. (Startup time is about 80ms)   
->               There is plenty of dependencies please run  
->                  :checkhealth to see what you need.
+There is plenty of dependencies please run `:checkhealth` to see what you need.
 
 ![Neovim Preview](assets/neovim_preview.png)
 
 ##### Credits
 
-[Neovim from Scratch](https://github.com/LunarVim/Neovim-from-scratch) - A lot of lua configurations picked up and learnt from here.
+[Neovim from Scratch](https://github.com/LunarVim/Neovim-from-scratch) - A lot of lua configurations picked up and learnt from here.   
 [amix/vimrc](https://github.com/amix/vimrc) - My first vim config and my inspiration.  
 [Drew Neil](https://github.com/nelstrom) - Most of my vim-fu learnt from his books & vimcasts.  
 [MikhailKuzntsov1](https://github.com/MikhailKuzntsov1) - My fellow friend and inspiration to migrate to neovim.
