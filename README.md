@@ -2,8 +2,6 @@
 
  *Minimalistic configs from the Arch Linux workstation.*
 
-![Configs preview](assets/preview.png)
-
 >- ***[Neovim](#neovim)***    
 
 >- ***[Alacritty & Zsh](#alacritty-and-zsh)***
