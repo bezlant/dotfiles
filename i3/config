@@ -161,7 +161,10 @@ bindsym $mod+m  "exec --no-startup-id blueman-manager"
 bindsym $mod+Tab workspace back_and_forth
 
 # take a screenshot (c for capture)
-bindsym --release $mod+c exec --no-startup-id scrot -s
+bindsym  --release $mod+c exec --no-startup-id escrotum -s
 
 # make a gif with peek (p for peek)
-bindsym --release $mod+p exec --no-startup-id peek
+bindsym --release $mod+p "exec --no-startup-id peek"
+
+# print screen on mod+`
+bindsym  $mod+grave exec --no-startup-id escrotum

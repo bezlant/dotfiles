@@ -73,3 +73,12 @@ vim.api.nvim_create_autocmd("FileType", { pattern = { "man" }, command = [[ nnor
 vim.api.nvim_create_autocmd("BufEnter", {
 	command = "set formatoptions-=cro",
 })
+
+-- Set numbers depending on the mode
+vim.cmd([[
+    augroup numbertoggle
+      autocmd!
+      autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+      autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+    augroup END
+]])

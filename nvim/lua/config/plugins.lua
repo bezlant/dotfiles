@@ -110,7 +110,8 @@ return packer.startup(function(use)
 	use({ "moll/vim-bbye" }) -- Close buffers without closing vim
 	use({ "akinsho/toggleterm.nvim", tag = "v2.*" }) -- Better terminal
 	use({ "lewis6991/impatient.nvim" }) -- speedup vim startup
-	use({ "gbprod/yanky.nvim" })
+	use({ "gbprod/yanky.nvim" }) -- Yank Improved
+	use({ "iamcco/markdown-preview.nvim" })
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then

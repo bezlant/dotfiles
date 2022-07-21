@@ -1,4 +1,3 @@
-includes: [ dracula.yml ]
 font:
   normal:
     family: VictorMono Nerd Font Mono

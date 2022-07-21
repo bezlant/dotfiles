@@ -8,6 +8,10 @@ yanky.setup({
 	highlight = {
 		timer = 150,
 	},
+
+	system_clipboard = {
+		sync_with_ring = false,
+	},
 })
 
 -- Keymaps
