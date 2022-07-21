@@ -6,7 +6,7 @@
 
 >- ***[Neovim](#neovim)***    
 
->- ***[Alacritty](#alacritty-and-zsh)***
+>- ***[Alacritty & Zsh](#alacritty-and-zsh)***
 
 >- ***[i3 with i3blocks & Rofi](#i3-i3blocks-and-rofi)***
 
