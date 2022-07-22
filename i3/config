@@ -145,9 +145,6 @@ bindsym 	$mod+period resize shrink width 5 px or 5 ppt
 # ranger in the 3rd workspace (r for ranger)
 bindsym $mod+r "workspace 3; exec --no-startup-id alacritty -e ranger"
 
-# open brave in the 4th workspace (o for open page)
-bindsym $mod+o "workspace 4; exec --no-startup-id /bin/brave"
-
 # open my current book in the 5th workspace (v for view)
 bindsym $mod+v "workspace 5; gaps inner current set 0; bar mode hide; exec --no-startup-id zathura ~/Books/Current/*"  
 

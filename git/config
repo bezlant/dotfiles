@@ -15,3 +15,5 @@
 	branch = auto
 	diff = auto
 	status = auto
+[init]
+	defaultBranch = develop

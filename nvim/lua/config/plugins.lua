@@ -112,6 +112,7 @@ return packer.startup(function(use)
 	use({ "lewis6991/impatient.nvim" }) -- speedup vim startup
 	use({ "gbprod/yanky.nvim" }) -- Yank Improved
 	use({ "iamcco/markdown-preview.nvim" })
+	use({ "wakatime/vim-wakatime" })
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then

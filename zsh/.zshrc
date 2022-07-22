@@ -28,6 +28,12 @@ alias l="la"
 alias clang-dump="clang-format -style=llvm -dump-config > .clang-format"
 alias vg='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind_result.txt'
 alias nrc='nvim -c "cd" ~/.config/nvim/lua/config'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gco='git checkout'
+alias gcl='git clone'
 
 # Exports
 export GPG_TTY=$(tty)
