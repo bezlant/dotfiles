@@ -6,8 +6,8 @@ font:
 
 window:
   padding:
-    x: 5
-    y: 5
+    x: 5 
+    y: 5 
 
 shell:
   program: /usr/bin/zsh

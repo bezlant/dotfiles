@@ -1,6 +1,6 @@
 exec_always --no-startup-id "$HOME/.config/i3/tray.sh"
 
-set $mod Mod4
+set $mod Mod1
 
 font pango:monospace 8
 
