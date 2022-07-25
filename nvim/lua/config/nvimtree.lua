@@ -46,7 +46,6 @@ nvimtree.setup({
 	renderer = {
 		add_trailing = false,
 		group_empty = true,
-		highlight_opened_files = "all",
 		root_folder_modifier = ":~",
 
 		indent_markers = {

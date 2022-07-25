@@ -101,6 +101,12 @@ return packer.startup(function(use)
 		run = ":TSUpdate",
 	})
 
+	-- debugger
+	use({ "mfussenegger/nvim-dap" }) -- Debugger
+	use({ "rcarriga/nvim-dap-ui" }) -- A simple UI out of the box
+	use({ "theHamsta/nvim-dap-virtual-text" }) -- Virtual text for variables
+	use({ "nvim-telescope/telescope-dap.nvim" })
+
 	-- misc
 	use({ "nvim-telescope/telescope.nvim" }) -- Are you ready for a journey?
 	use({ "windwp/nvim-autopairs" }) -- A decent auto pair for brackets

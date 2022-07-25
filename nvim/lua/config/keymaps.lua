@@ -42,6 +42,7 @@ map("n", "<leader>bd", "<cmd>Bdelete %<CR>", opts)
 map("n", "<leader>h", "<cmd>bprevious<cr>zz", opts)
 map("n", "<leader>l", "<cmd>bnext<cr>zz", opts)
 map("n", "<leader>ba", "<cmd>bufdo :Bdelete<CR>", opts)
+map("n", "<leader>bo", "<cmd>%bd|e#|bd#<CR>", opts)
 
 -- Tabs
 map("n", "<leader>tn", "<cmd>tabnew<cr>", opts)
