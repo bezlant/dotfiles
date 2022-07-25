@@ -1,8 +1,10 @@
 exec_always --no-startup-id "$HOME/.config/i3/tray.sh"
 
-set $mod Mod1
+set $mod Mod4
 
 font pango:monospace 8
+
+focus_follows_mouse no
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status pkill -RTMIN+1 i3blocks
