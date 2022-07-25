@@ -34,6 +34,7 @@ alias gc='git commit'
 alias gp='git push'
 alias gco='git checkout'
 alias gcl='git clone'
+alias lg='lazygit'
 
 # Exports
 export GPG_TTY=$(tty)
