@@ -118,8 +118,9 @@ return packer.startup(function(use)
 	use({ "lewis6991/impatient.nvim" }) -- speedup vim startup
 	use({ "gbprod/yanky.nvim" }) -- Yank Improved
 	use({ "iamcco/markdown-preview.nvim" })
-	use({ "wakatime/vim-wakatime" })
-	use({ "tpope/vim-surround" })
+	use({ "wakatime/vim-wakatime" }) -- Time tracker
+	use({ "tpope/vim-surround" }) -- Life saver
+	use({ "danymat/neogen" }) -- Documentation generator
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then

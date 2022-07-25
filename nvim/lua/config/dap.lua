@@ -1,6 +1,7 @@
 local dap_ok, dap = pcall(require, "dap")
 if not dap_ok then
 	vim.notify("Dap not found please install it!")
+	return
 end
 
 -- Keymappings
@@ -43,6 +44,7 @@ vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignErro
 local dapui_ok, dapui = pcall(require, "dapui")
 if not dapui_ok then
 	vim.notify("Dapui not found please install it!")
+	return
 end
 
 dapui.setup()
@@ -50,6 +52,7 @@ dapui.setup()
 local dap_vtext_ok, dap_vtext = pcall(require, "nvim-dap-virtual-text")
 if not dap_vtext_ok then
 	vim.notify("Dap Virtual Text not found please install it!")
+	return
 end
 
 dap_vtext.setup()
