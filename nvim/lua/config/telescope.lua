@@ -79,3 +79,6 @@ telescope.setup({
 		},
 	},
 })
+
+-- Extensions
+telescope.load_extension("dap")

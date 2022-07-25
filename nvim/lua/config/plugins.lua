@@ -119,6 +119,7 @@ return packer.startup(function(use)
 	use({ "gbprod/yanky.nvim" }) -- Yank Improved
 	use({ "iamcco/markdown-preview.nvim" })
 	use({ "wakatime/vim-wakatime" })
+	use({ "tpope/vim-surround" })
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then

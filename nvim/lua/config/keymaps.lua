@@ -55,9 +55,6 @@ map("n", "<leader>t<leader>", "<cmd>tabnext<cr>zz", opts)
 -- Save on leader + w
 map("n", "<leader>w", "<cmd>w<CR>", opts)
 
--- Source fresh config
-map("n", "<leader>c", "<cmd>so<CR>", opts)
-
 -- Highligts off
 map("n", "<leader><CR>", "<cmd>noh<CR>", opts)
 
@@ -80,7 +77,7 @@ map("n", "<leader>p", '"+p', opts)
 map("v", "<leader>p", '"+p', opts)
 
 -- You need this
-map("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
+map("n", "<leader>x", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
 
 -- Search improved
 map("n", "n", "nzzzv", opts)
