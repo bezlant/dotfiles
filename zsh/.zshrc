@@ -35,6 +35,10 @@ alias gp='git push'
 alias gco='git checkout'
 alias gcl='git clone'
 alias lg='lazygit'
+function fn_zathura {
+    zathura $1 & disown
+}
+alias zth='fn_zathura'
 
 # Exports
 export GPG_TTY=$(tty)
