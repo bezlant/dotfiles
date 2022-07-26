@@ -14,12 +14,6 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.shfmt,
 		diagnostics.shellcheck,
-		diagnostics.cppcheck.with({
-			extra_args = {
-				"--enable=all",
-				"--suppress=missingIncludeSystem",
-				"--supress=UnmatchedSuppression",
-			},
-		}),
+		diagnostics.cppcheck,
 	},
 })

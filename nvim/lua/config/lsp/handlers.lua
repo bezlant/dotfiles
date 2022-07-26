@@ -53,12 +53,14 @@ end
 local function lsp_keymaps()
 	map("K", vim.lsp.buf.hover)
 	map("gd", vim.lsp.buf.definition)
-	map("<leader>dj", vim.diagnostic.goto_next)
-	map("<leader>dk", vim.diagnostic.goto_prev)
+	map("gr", "<cmd>Telescope lsp_references<cr>")
+	map("gi", "<cmd>Telescope lsp_implementations<cr>")
+	map("<leader>j", vim.diagnostic.goto_next)
+	map("<leader>k", vim.diagnostic.goto_prev)
 	map("<leader>dt", "<cmd>Telescope diagnostics<CR>")
 	map("<leader>r", vim.lsp.buf.rename)
 	map("<leader>a", vim.lsp.buf.code_action)
-	map("<leader>w", "<cmd>lua vim.lsp.buf.format()<CR> <cmd>lua vim.api.nvim_command('write')<CR>")
+	map("<leader>w", "<cmd>lua vim.lsp.buf.format({bufnr = bufnr})<CR> <cmd>lua vim.api.nvim_command('write')<CR>")
 end
 
 M.on_attach = function()
