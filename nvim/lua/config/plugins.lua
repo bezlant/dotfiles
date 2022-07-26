@@ -91,7 +91,8 @@ return packer.startup(function(use)
 	use({ "rafamadriz/friendly-snippets" }) -- snippets to use
 
 	-- lsp
-	use({ "williamboman/nvim-lsp-installer" }) -- easily install servers
+	use({ "williamboman/mason.nvim" }) -- lsp, linter, formatter, dap manager
+	use({ "williamboman/mason-lspconfig.nvim" }) -- easily install servers
 	use({ "neovim/nvim-lspconfig" }) -- enable lsp
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- enable linters & stylers
 

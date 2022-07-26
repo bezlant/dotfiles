@@ -1,8 +1,24 @@
-local lps_installer_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+local mason_ok, mason = pcall(require, "mason")
+if not mason_ok then
+	vim.notify("can't load Mason plugin :(")
+	return
+end
+
+local lps_installer_ok, lsp_installer = pcall(require, "mason-lspconfig")
 if not lps_installer_ok then
 	vim.notify("can't load nvim-lsp-installer plugin :(")
 	return
 end
+
+mason.setup({
+	ui = {
+		icons = {
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗",
+		},
+	},
+})
 
 local servers = {
 	"sumneko_lua",
