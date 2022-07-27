@@ -39,6 +39,10 @@ function fn_zathura {
     zathura $1 & disown
 }
 alias zth='fn_zathura'
+alias rm='trash'
+alias rmr='trash-restore'
+alias rml='trash-list'
+alias wiki='wikit'
 
 # Exports
 export GPG_TTY=$(tty)
@@ -51,3 +55,7 @@ export LANG=en_US.UTF-8
 export HISTFILE="$HOME/.cache/.zsh_history"
 export LESSHISTFILE="$HOME/.cache/.less_history"
 export FILE="ranger"
+export PATH="/opt/goinfre/tarticar/homebrew/bin:$PATH"
+export PATH="/Users/tarticar/Library/Python/3.8/bin:$PATH"
+export LDFLAGS="-L/opt/goinfre/tarticar/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/goinfre/tarticar/homebrew/opt/llvm/include"
