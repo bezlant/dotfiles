@@ -60,10 +60,21 @@ local function lsp_keymaps()
 	map("<leader>dt", "<cmd>Telescope diagnostics<CR>")
 	map("<leader>r", vim.lsp.buf.rename)
 	map("<leader>a", vim.lsp.buf.code_action)
-	map("<leader>w", "<cmd>lua vim.lsp.buf.format({bufnr = bufnr})<CR> <cmd>lua vim.api.nvim_command('write')<CR>")
 end
 
-M.on_attach = function()
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
+M.on_attach = function(client, bufnr)
+	if client.supports_method("textDocument/formatting") then
+		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = augroup,
+			buffer = bufnr,
+			callback = function()
+				vim.lsp.buf.format({ bufnr = bufnr })
+			end,
+		})
+	end
 	lsp_keymaps()
 end
 
