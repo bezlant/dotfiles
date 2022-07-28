@@ -20,6 +20,7 @@ local options = {
 	signcolumn = "yes",
 	smartcase = true,
 	smartindent = true,
+	autoindent = true,
 	swapfile = false,
 	tabstop = 4,
 	termguicolors = true,
@@ -85,7 +86,7 @@ vim.cmd([[
 
 -- Adjust padding in Alacritty
 function Sad(line_nr, from, to, fname)
-	vim.cmd(string.format("silent !sed -i '%ss/%s/%s/g' %s", line_nr, from, to, fname))
+	vim.cmd(string.format("silent !sed -i'' -e '%ss/%s/%s/g' %s", line_nr, from, to, fname))
 end
 
 function IncreasePadding()
