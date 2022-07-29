@@ -123,6 +123,8 @@ return packer.startup(function(use)
 	use({ "tpope/vim-surround" }) -- Life saver
 	use({ "danymat/neogen" }) -- Documentation generator
 	use({ "nathom/filetype.nvim" }) -- Load filetypes only on BufEnter
+	use({ "folke/todo-comments.nvim" }) -- todo, hack, warn, perf, note
+	use({ "rmagatti/auto-session" }) -- session managment
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
