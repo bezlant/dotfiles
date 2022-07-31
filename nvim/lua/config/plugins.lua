@@ -125,6 +125,7 @@ return packer.startup(function(use)
 	use({ "nathom/filetype.nvim" }) -- Load filetypes only on BufEnter
 	use({ "folke/todo-comments.nvim" }) -- todo, hack, warn, perf, note
 	use({ "rmagatti/auto-session" }) -- session managment
+	use({ "Pocco81/true-zen.nvim" }) -- session managment
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
