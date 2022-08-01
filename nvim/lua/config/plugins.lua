@@ -122,7 +122,6 @@ return packer.startup(function(use)
 	use({ "wakatime/vim-wakatime" }) -- Time tracker
 	use({ "tpope/vim-surround" }) -- Life saver
 	use({ "danymat/neogen" }) -- Documentation generator
-	use({ "nathom/filetype.nvim" }) -- Load filetypes only on BufEnter
 	use({ "folke/todo-comments.nvim" }) -- todo, hack, warn, perf, note
 	use({ "rmagatti/auto-session" }) -- session managment
 
