@@ -4,8 +4,9 @@ if not ok then
 	return
 end
 
+local lualine = require("lualine")
 local map = require("config.utils").map
-map("n", "<leader>z", ":TZAtaraxis<CR>", { noremap = true })
+map("n", "<leader>z", "<cmd>TZAtaraxis<CR>", { noremap = true })
 
 zen.setup({
 	modes = { -- configurations per mode
@@ -23,8 +24,12 @@ zen.setup({
 				top = 0,
 				bottom = 0,
 			},
-			open_callback = nil, -- run a function when opening Ataraxis mode
-			close_callback = nil, -- run a function when closing Ataraxis mode
+			open_callback = function()
+				lualine.hide()
+			end,
+			close_callback = function()
+				lualine.hide({ unhide = true })
+			end,
 		},
 		minimalist = {
 			ignored_buf_types = { "nofile" }, -- save current options from any window except ones displaying these kinds of buffers
