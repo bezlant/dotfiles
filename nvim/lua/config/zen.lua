@@ -8,6 +8,30 @@ local lualine = require("lualine")
 local map = require("config.utils").map
 map("n", "<leader>z", "<cmd>TZAtaraxis<CR>", { noremap = true })
 
+local tmux_off = function()
+	if vim.fn.exists("$TMUX") == 0 then
+		return
+	end
+	vim.cmd([[silent !tmux set status off]])
+end
+
+local tmux_on = function()
+	if vim.fn.exists("$TMUX") == 0 then
+		return
+	end
+	vim.cmd([[silent !tmux set status on]])
+end
+
+local open_cb = function()
+	lualine.hide()
+	tmux_on()
+end
+
+local close_cb = function()
+	lualine.hide({ unhide = true })
+	tmux_off()
+end
+
 zen.setup({
 	modes = { -- configurations per mode
 		ataraxis = {
@@ -19,17 +43,13 @@ zen.setup({
 			},
 			quit_untoggles = true, -- type :q or :qa to quit Ataraxis mode
 			padding = { -- padding windows
-				left = 52,
-				right = 52,
+				left = 45,
+				right = 45,
 				top = 0,
 				bottom = 0,
 			},
-			open_callback = function()
-				lualine.hide()
-			end,
-			close_callback = function()
-				lualine.hide({ unhide = true })
-			end,
+			open_callback = open_cb,
+			close_callback = close_cb,
 		},
 		minimalist = {
 			ignored_buf_types = { "nofile" }, -- save current options from any window except ones displaying these kinds of buffers
