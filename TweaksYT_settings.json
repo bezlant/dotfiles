@@ -1,6 +1,6 @@
 {
-  "_timestamp": 1657882566212,
-  "_version": "3.28.0-chrome",
+  "_timestamp": 1659937040836,
+  "_version": "3.29.0-chrome",
   "actionIndicatorActionSeek": false,
   "actionIndicatorActionSeekBasedOnPlaybackRate": false,
   "actionIndicatorIconHidden": false,
@@ -19,6 +19,7 @@
   "backToTop": false,
   "backToTopPosition": "center",
   "channelPageBanner": false,
+  "channelTrailerAutoplay": true,
   "chaptersAutoShowList": false,
   "chatVisibility": "disable",
   "cinemaMode": "mastheadFixed",
@@ -30,6 +31,7 @@
   "cleanPlayerChannelWattermark": true,
   "cleanPlayerEndScreen": true,
   "cleanPlayerPaidContentOverlay": true,
+  "cleanPlayerProgressBarHeatmap": false,
   "cleanPlayerTop": true,
   "cleanPlayerVideoAnnotations": true,
   "cleanSite": true,
@@ -48,6 +50,15 @@
   "commentsInputTimeCorrection": 0,
   "commentsSectionHidden": true,
   "commentsSortBy": false,
+  "contentFilters": false,
+  "contentFiltersLiveHomePage": false,
+  "contentFiltersLiveRelatedVideos": false,
+  "contentFiltersLiveSubscriptionsPage": false,
+  "contentFiltersMixHomePage": false,
+  "contentFiltersMixRelatedVideos": false,
+  "contentFiltersShortsSubscriptionsPage": false,
+  "contentFiltersUpcomingHomePage": false,
+  "contentFiltersUpcomingSubscriptionsPage": false,
   "convertChannelNameToURL": true,
   "copyVideoURLDomain": "short",
   "copyVideoURLExcludePlaylist": false,
@@ -90,6 +101,7 @@
     "toggleCleanPlayer": null,
     "toggleCleanSite": null,
     "toggleCommentsVisibility": null,
+    "toggleContentFilters": null,
     "toggleSidebarVisibility": null,
     "toggleSkipVideoBlockGlobal": null,
     "toggleSkipVideoBlockIndividual": null,
@@ -111,6 +123,7 @@
   "initialVolumeLevel": 100,
   "inlinePlayback": false,
   "instantFullscreen": false,
+  "instantFullscreenSmooth": false,
   "instantTogglePlay": false,
   "interactionZonesMouseButton": 1,
   "interactionZonesMouseButtonPresets": [
@@ -813,12 +826,12 @@
     },
     {
       "action": "adjustPlaybackRateBy",
-      "key": "38:arrowup",
+      "key": null,
       "payload": 0.1
     },
     {
       "action": "adjustPlaybackRateBy",
-      "key": "40:arrowdown",
+      "key": null,
       "payload": -0.1
     }
   ],
@@ -860,6 +873,10 @@
       "videoTitle": ""
     }
   ],
+  "stickyPlayer": false,
+  "stickyPlayerHeight": 320,
+  "stickyPlayerInactiveAtEnd": false,
+  "stickyPlayerInactiveWhilePaused": false,
   "subtitlesDisabled": false,
   "subtitlesOffsetY": 2,
   "subtitlesPosition": false,
