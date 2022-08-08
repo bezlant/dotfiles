@@ -4,7 +4,6 @@ if not ok then
 	return
 end
 
-local lualine = require("lualine")
 local map = require("config.utils").map
 map("n", "<leader>z", "<cmd>TZAtaraxis<CR>", { noremap = true })
 
@@ -22,34 +21,28 @@ local tmux_on = function()
 	vim.cmd([[silent !tmux set status on]])
 end
 
-local open_cb = function()
-	lualine.hide()
-	tmux_on()
-end
-
-local close_cb = function()
-	lualine.hide({ unhide = true })
-	tmux_off()
-end
-
 zen.setup({
 	modes = { -- configurations per mode
 		ataraxis = {
 			shade = "dark", -- if `dark` then dim the padding windows, otherwise if it's `light` it'll brighten said windows
 			backdrop = 0, -- percentage by which padding windows should be dimmed/brightened. Must be a number between 0 and 1. Set to 0 to keep the same background color
 			minimum_writing_area = { -- minimum size of main window
-				width = 80,
+				width = 70,
 				height = 44,
 			},
 			quit_untoggles = true, -- type :q or :qa to quit Ataraxis mode
 			padding = { -- padding windows
-				left = 45,
-				right = 45,
+				left = 52,
+				right = 52,
 				top = 0,
 				bottom = 0,
 			},
-			open_callback = open_cb,
-			close_callback = close_cb,
+			callbacks = { -- run functions when opening/closing Ataraxis mode
+				open_pre = tmux_off,
+				open_pos = nil,
+				close_pre = tmux_on,
+				close_pos = nil,
+			},
 		},
 		minimalist = {
 			ignored_buf_types = { "nofile" }, -- save current options from any window except ones displaying these kinds of buffers
@@ -66,8 +59,12 @@ zen.setup({
 				ruler = false,
 				numberwidth = 1,
 			},
-			open_callback = nil, -- run a function when opening Minimalist mode
-			close_callback = nil, -- run a function when closing Minimalist mode
+			callbacks = { -- run functions when opening/closing Minimalist mode
+				open_pre = nil,
+				open_pos = nil,
+				close_pre = nil,
+				close_pos = nil,
+			},
 		},
 		narrow = {
 			--- change the style of the fold lines. Set it to:
@@ -76,12 +73,20 @@ zen.setup({
 			--- function() end: pass a custom func with your fold lines. See :h foldtext
 			folds_style = "informative",
 			run_ataraxis = true, -- display narrowed text in a Ataraxis session
-			open_callback = nil, -- run a function when opening Narrow mode
-			close_callback = nil, -- run a function when closing Narrow mode
+			callbacks = { -- run functions when opening/closing Narrow mode
+				open_pre = nil,
+				open_pos = nil,
+				close_pre = nil,
+				close_pos = nil,
+			},
 		},
 		focus = {
-			open_callback = nil, -- run a function when opening Focus mode
-			close_callback = nil, -- run a function when closing Focus mode
+			callbacks = { -- run functions when opening/closing Focus mode
+				open_pre = nil,
+				open_pos = nil,
+				close_pre = nil,
+				close_pos = nil,
+			},
 		},
 	},
 	integrations = {
@@ -91,5 +96,6 @@ zen.setup({
 			font = "+3",
 		},
 		twilight = false, -- enable twilight (ataraxis)
+		lualine = true, -- hide nvim-lualine (ataraxis)
 	},
 })
