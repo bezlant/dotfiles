@@ -43,6 +43,8 @@ alias rm='trash'
 alias rmr='trash-restore'
 alias rml='trash-list'
 alias wiki='wikit'
+alias zshrc='vim ~/.zshrc'
+alias bmake='bear -- make'
 
 # Exports
 export GPG_TTY=$(tty)
@@ -56,15 +58,8 @@ export HISTFILE="$HOME/.cache/.zsh_history"
 export LESSHISTFILE="$HOME/.cache/.less_history"
 export FILE="ranger"
 
-# Tmux
-if [[ -z "$TMUX" ]]; then
-    if tmux has-session 2>/dev/null; then
-        exec tmux attach
-    else
-        exec tmux
-    fi
-fi
-
 if [[ $TERM == xterm ]]; then
     TERM=xterm-256color
 fi
+
+setxkbmap -option caps:escape

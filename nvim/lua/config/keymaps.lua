@@ -36,17 +36,6 @@ map("n", "<C-l>", "<C-w>l", opts)
 -- Quick escape
 map("i", "jk", "<ESC>", opts)
 
--- Visual --
--- Moving text
-map("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", opts)
-map("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", opts)
-
--- Visual block
--- map("x", "J", "<cmd>m '>+1<CR>gv=gv", opts)
--- map("x", "K", "<cmd>m '<-2<CR>gv=gv", opts)
-map("x", "<A-j>", "<cmd>m '>+1<CR>gv=gv", opts)
-map("x", "<A-k>", "<cmd>m '<-2<CR>gv=gv", opts)
-
 -- Don't copy on paste
 map("v", "p", '"_dP', opts)
 
