@@ -15,9 +15,9 @@ null_ls.setup({
 		diagnostics.shellcheck,
 		diagnostics.cppcheck.with({
 			extra_args = {
-				-- "--enable=style,performance,portability,warning",
-				"--enable=all",
-				"--suppress=missingIncludeSystem",
+				"--enable=style,performance,portability,warning",
+				-- "--enable=all",
+				-- "--suppress=missingIncludeSystem",
 			},
 		}),
 	},
