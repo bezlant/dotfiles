@@ -124,7 +124,6 @@ bindsym $mod+Shift+q		    exec "my3lock"
 
 # default gaps 
 for_window [class="^.*"] border pixel 2
-for_window [class=".*"] fullscreen enable
 gaps inner 0
 
 # resize gaps

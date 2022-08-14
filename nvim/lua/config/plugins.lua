@@ -120,7 +120,7 @@ return packer.startup(function(use)
 	use({ "gbprod/yanky.nvim" }) -- Yank Improved
 	use({ "iamcco/markdown-preview.nvim" })
 	use({ "wakatime/vim-wakatime" }) -- Time tracker
-	use({ "tpope/vim-surround" }) -- Life saver
+	use({ "kylechui/nvim-surround" }) -- Life saver
 	use({ "danymat/neogen" }) -- Documentation generator
 	use({ "folke/todo-comments.nvim" }) -- todo, hack, warn, perf, note
 	use({ "rmagatti/auto-session" }) -- session managment
