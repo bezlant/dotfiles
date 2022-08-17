@@ -91,8 +91,5 @@ nvimtree.setup({
 
 	filters = {
 		dotfiles = true,
-		custom = {
-			"^\\.git",
-		},
 	},
 })
