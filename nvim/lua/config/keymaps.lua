@@ -42,8 +42,8 @@ map("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", opts)
 map("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", opts)
 
 -- Visual block
-map("x", "J", "<cmd>m '>+1<CR>gv-gv", opts)
-map("x", "K", "<cmd>m '<-2<CR>gv-gv", opts)
+map("x", "J", ":move '>+1<CR>gv-gv", opts)
+map("x", "K", ":move '<-2<CR>gv-gv", opts)
 map("x", "<A-j>", "<cmd>m '>+1<CR>gv=gv", opts)
 map("x", "<A-k>", "<cmd>m '<-2<CR>gv=gv", opts)
 
@@ -54,7 +54,7 @@ map("v", "p", '"_dP', opts)
 map("n", '"|', '"+', opts)
 
 -- Bbye & Buffers
-map("n", "<leader>bd", "<cmd>Bdelete %<CR>", opts)
+map("n", "<leader>bd", "<cmd>Bdelete! %<CR>", opts)
 map("n", "<leader>h", "<cmd>bprevious<cr>zz", opts)
 map("n", "<leader>l", "<cmd>bnext<cr>zz", opts)
 map("n", "<leader>ba", "<cmd>bufdo :Bdelete<CR>", opts)
