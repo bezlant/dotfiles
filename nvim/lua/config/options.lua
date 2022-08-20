@@ -4,6 +4,7 @@ local options = {
 	completeopt = { "menu", "menuone", "noselect" },
 	sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal",
 	conceallevel = 0,
+	cursorline = true,
 	expandtab = true,
 	fileencoding = "utf-8",
 	guifont = "monospace:h17",
@@ -106,4 +107,14 @@ vim.cmd([[
    au VimEnter * lua DecreasePadding()
    au VimLeavePre * lua IncreasePadding()
   augroup END 
+]])
+
+vim.cmd([[
+augroup CursorLine
+    au!
+    au VimEnter * setlocal cursorline
+    au WinEnter * setlocal cursorline
+    au BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+augroup END
 ]])
