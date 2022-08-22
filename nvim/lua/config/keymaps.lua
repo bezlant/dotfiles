@@ -81,8 +81,8 @@ map("n", "0", "^", opts)
 -- map("n", "Y", "yg$", opts)
 
 -- Scrolling improved
-map("n", "<C-d>", "<C-d>zz", opts)
-map("n", "<C-u>", "<C-u>zz", opts)
+-- map("n", "<C-d>", "<C-d>zz", opts)
+-- map("n", "<C-u>", "<C-u>zz", opts)
 
 -- Easy yank to the system clipboard
 map("n", "<leader>y", '"+y', opts)
