@@ -73,7 +73,7 @@ return packer.startup(function(use)
 	use({ "nvim-lua/plenary.nvim" })
 
 	-- colors & themes
-	use({ "Mofiqul/dracula.nvim" })
+	use({ "binhtran432k/dracula.nvim", branch = "improve" })
 	use({ "kyazdani42/nvim-web-devicons" })
 	use({ "nvim-lualine/lualine.nvim" })
 
@@ -125,7 +125,7 @@ return packer.startup(function(use)
 	use({ "folke/todo-comments.nvim" }) -- todo, hack, warn, perf, note
 	use({ "rmagatti/auto-session" }) -- session managment
 	use({ "Pocco81/true-zen.nvim" }) -- no distraction mode
-	use({ "karb94/neoscroll.nvim" })
+	use({ "karb94/neoscroll.nvim" }) -- sexy scrolling
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
