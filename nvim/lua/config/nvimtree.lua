@@ -19,7 +19,9 @@ nvimtree.setup({
 	sync_root_with_cwd = true,
 
 	view = {
-		adaptive_size = true,
+		width = 30,
+		height = 30,
+		adaptive_size = false,
 		mappings = {
 			custom_only = false,
 			list = {
