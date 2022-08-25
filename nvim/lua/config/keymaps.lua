@@ -135,6 +135,7 @@ map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 map("n", "<leader>fm", "<cmd>Telescope man_pages<cr>", opts)
 map("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", opts)
+map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", opts)
 
 -- NvimTree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
