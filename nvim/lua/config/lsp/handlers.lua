@@ -52,6 +52,7 @@ end
 
 local function lsp_keymaps()
 	map("K", vim.lsp.buf.hover)
+	map("<C-k>", vim.lsp.buf.signature_help)
 	map("gd", vim.lsp.buf.definition)
 	map("gr", "<cmd>Telescope lsp_references<cr>")
 	map("gi", "<cmd>Telescope lsp_implementations<cr>")
@@ -60,6 +61,7 @@ local function lsp_keymaps()
 	map("<leader>dt", "<cmd>Telescope diagnostics<CR>")
 	map("<leader>r", vim.lsp.buf.rename)
 	map("<leader>a", vim.lsp.buf.code_action)
+	map("<leader>ds", require("telescope.builtin").lsp_document_symbols)
 end
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
