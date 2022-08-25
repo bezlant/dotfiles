@@ -73,7 +73,7 @@ return packer.startup(function(use)
 	use({ "nvim-lua/plenary.nvim" })
 
 	-- colors & themes
-	use({ "binhtran432k/dracula.nvim", branch = "improve" })
+	use({ "Mofiqul/dracula.nvim" })
 	use({ "kyazdani42/nvim-web-devicons" })
 	use({ "nvim-lualine/lualine.nvim" })
 
