@@ -16,9 +16,10 @@ null_ls.setup({
 		diagnostics.cppcheck.with({
 			extra_args = {
 				"--enable=style,performance,portability,warning",
-				-- "--enable=all",
-				-- "--suppress=missingIncludeSystem",
 			},
 		}),
 	},
+	on_init = function(new_client, _)
+		new_client.offset_encoding = "utf-8"
+	end,
 })

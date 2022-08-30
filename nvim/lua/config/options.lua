@@ -53,6 +53,9 @@ vim.cmd([[ set shortmess+=c ]])
 -- Buffer behavior
 vim.cmd([[ set switchbuf=useopen,usetab,newtab ]])
 
+-- Mouse for the normies
+vim.cmd([[set mouse=a]])
+
 -- Autocommands
 -- Return to the previous location in the file on open
 vim.api.nvim_create_autocmd(
