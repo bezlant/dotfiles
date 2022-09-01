@@ -4,6 +4,18 @@ if not ok then
 	return
 end
 
+local border_opts = {
+	focusable = false,
+	style = "minimal",
+	border = "rounded",
+	source = "always",
+	header = "",
+	prefix = "",
+	scope = "line",
+}
+
+vim.diagnostic.config({ virtual_text = false, underline = false, update_in_insert = false, float = border_opts })
+
 local M = {}
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.offsetEncoding = { "utf-8" }
@@ -21,28 +33,13 @@ M.setup = function()
 		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 	end
 
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
-	})
+	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, border_opts)
 
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "rounded",
-	})
+	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, border_opts)
 
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-		underline = false,
 		signs = { active = signs },
 		severity_sort = true,
-		virtual_text = false,
-		update_in_insert = false,
-		float = {
-			focusable = false,
-			style = "minimal",
-			border = "rounded",
-			source = "always",
-			header = "",
-			prefix = "",
-		},
 	})
 end
 

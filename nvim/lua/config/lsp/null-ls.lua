@@ -14,6 +14,7 @@ null_ls.setup({
 		formatting.shfmt,
 		diagnostics.shellcheck,
 		diagnostics.cppcheck.with({
+			-- method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
 			extra_args = {
 				"--enable=style,performance,portability,warning",
 			},
