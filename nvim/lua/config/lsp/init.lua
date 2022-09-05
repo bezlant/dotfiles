@@ -26,6 +26,7 @@ local servers = {
 	"bashls",
 	"cmake",
 	"marksman",
+	"csharp_ls",
 }
 
 lsp_installer.setup({
