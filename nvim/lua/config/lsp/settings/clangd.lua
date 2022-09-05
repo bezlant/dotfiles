@@ -7,7 +7,7 @@ return {
 			"--suggest-missing-includes",
 			"--cross-file-rename",
 			"--completion-style=detailed",
-			"--offset-encoding=utf-8",
+			"--offset-encoding=utf-16",
 		},
 		init_options = {
 			clangdFileStatus = true,
@@ -31,6 +31,6 @@ return {
 			".",
 		},
 		single_file_support = true,
-		offsetEncoding = { "utf-8" },
+		offsetEncoding = { "utf-16" },
 	},
 }
