@@ -49,7 +49,7 @@ end
 
 local function lsp_keymaps()
 	map("K", vim.lsp.buf.hover)
-	map("<C-k>", vim.lsp.buf.signature_help)
+	-- map("<C-k>", vim.lsp.buf.signature_help)
 	map("gd", vim.lsp.buf.definition)
 	map("gr", "<cmd>Telescope lsp_references<cr>")
 	map("gi", "<cmd>Telescope lsp_implementations<cr>")
