@@ -28,11 +28,6 @@ alias l="la"
 alias clang-dump="clang-format -style=llvm -dump-config > .clang-format"
 alias vg='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind_result.txt'
 alias nrc='nvim -c "cd" ~/.config/nvim/lua/config'
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit'
-alias gp='git push'
-alias gco='git checkout'
 alias gcl='git clone'
 alias lg='lazygit'
 function fn_zathura {
@@ -45,6 +40,8 @@ alias rml='trash-list'
 alias wiki='wikit'
 alias zshrc='vim ~/.zshrc'
 alias bmake='bear -- make'
+alias tsm='transmission-remote'
+
 
 # Exports
 export GPG_TTY=$(tty)
@@ -57,9 +54,12 @@ export LANG=en_US.UTF-8
 export HISTFILE="$HOME/.cache/.zsh_history"
 export LESSHISTFILE="$HOME/.cache/.less_history"
 export FILE="ranger"
+export PATH="$PATH:/home/tarticar/.dotnet/tools"
 
 if [[ $TERM == xterm ]]; then
     TERM=xterm-256color
 fi
 
+# This is neccessary otherwise external keyboards don't get the layout change bindings on boot through .xinitrc
+setxkbmap -layout us,ru -option grp:alt_shift_toggle
 setxkbmap -option caps:escape
