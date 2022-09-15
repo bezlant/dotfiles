@@ -34,9 +34,6 @@ function fn_zathura {
     zathura $1 & disown
 }
 alias zth='fn_zathura'
-alias rm='trash'
-alias rmr='trash-restore'
-alias rml='trash-list'
 alias wiki='wikit'
 alias zshrc='vim ~/.zshrc'
 alias bmake='bear -- make'
@@ -53,18 +50,17 @@ export LANG=en_US.UTF-8
 export HISTFILE="$HOME/.cache/.zsh_history"
 export LESSHISTFILE="$HOME/.cache/.less_history"
 export FILE="ranger"
-export PATH="$PATH:/home/tarticar/.dotnet/tools"
 
 if [[ $TERM == xterm ]]; then
     TERM=xterm-256color
 fi
 
-if [[ "$OSTYPE" == "darwin"* ]]; then 
+if [[ "$OSTYPE" == "darwin20.0" ]]; then 
     export PATH="/opt/goinfre/tarticar/homebrew/bin:$PATH"
     export PATH="/Users/tarticar/Library/Python/3.8/bin:$PATH"
     export LDFLAGS="-L/opt/goinfre/tarticar/homebrew/opt/llvm/lib"
     export CPPFLAGS="-I/opt/goinfre/tarticar/homebrew/opt/llvm/include"
-
+    export PATH="$PATH:/Users/tarticar/.dotnet/tools"
 # Tmux
     if [[ -z "$TMUX" ]]; then
         if tmux has-session 2>/dev/null; then
@@ -75,6 +71,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     fi
 else
     # This is neccessary otherwise external keyboards don't get the layout change bindings on boot through .xinitrc
+    export PATH="$PATH:/home/tarticar/.dotnet/tools"
+    alias rm='trash'
+    alias rmr='trash-restore'
+    alias rml='trash-list'
     setxkbmap -layout us,ru -option grp:alt_shift_toggle
     setxkbmap -option caps:escape
 fi
