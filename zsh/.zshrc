@@ -57,9 +57,20 @@ export LANG=en_US.UTF-8
 export HISTFILE="$HOME/.cache/.zsh_history"
 export LESSHISTFILE="$HOME/.cache/.less_history"
 export FILE="ranger"
+export PATH="/opt/goinfre/tarticar/homebrew/bin:$PATH"
+export PATH="/Users/tarticar/Library/Python/3.8/bin:$PATH"
+export LDFLAGS="-L/opt/goinfre/tarticar/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/goinfre/tarticar/homebrew/opt/llvm/include"
+
+# Tmux
+if [[ -z "$TMUX" ]]; then
+    if tmux has-session 2>/dev/null; then
+        exec tmux attach
+    else
+        exec tmux
+    fi
+fi
 
 if [[ $TERM == xterm ]]; then
     TERM=xterm-256color
 fi
-
-setxkbmap -option caps:escape
