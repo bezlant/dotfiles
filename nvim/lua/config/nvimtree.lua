@@ -20,7 +20,6 @@ nvimtree.setup({
 
 	view = {
 		width = 30,
-		height = 30,
 		adaptive_size = false,
 		mappings = {
 			custom_only = false,
