@@ -1,6 +1,6 @@
 local options = {
 	backup = false,
-	cmdheight = 1,
+	cmdheight = 0,
 	completeopt = { "menu", "menuone", "noselect" },
 	sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal",
 	conceallevel = 0,
