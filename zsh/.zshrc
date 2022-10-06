@@ -19,7 +19,6 @@ alias vi='nvim'
 alias c='xsel --clipboard --input'
 alias p='xsel --clipboard --output'
 alias rr='ranger'
-alias open='xdg-open'
 alias ll="exa -l -g --icons"
 alias la="ll -a"
 alias ls="exa --icons -F --sort=name --oneline"
@@ -38,6 +37,8 @@ alias wiki='wikit'
 alias zshrc='vim ~/.zshrc'
 alias bmake='bear -- make'
 alias tsm='transmission-remote'
+alias db='dotnet build'
+alias dr='dotnet run'
 
 # Exports
 export GPG_TTY=$(tty)
@@ -56,7 +57,9 @@ if [[ $TERM == xterm ]]; then
 fi
 
 if [[ "$OSTYPE" == "darwin20.0" ]]; then 
+    export PATH="/opt/goinfre/tarticar/homebrew/sbin:$PATH"
     export PATH="/opt/goinfre/tarticar/homebrew/bin:$PATH"
+    export PATH="/opt/goinfre/tarticar/homebrew/opt/llvm/bin/:$PATH"
     export PATH="/Users/tarticar/Library/Python/3.8/bin:$PATH"
     export LDFLAGS="-L/opt/goinfre/tarticar/homebrew/opt/llvm/lib"
     export CPPFLAGS="-I/opt/goinfre/tarticar/homebrew/opt/llvm/include"
@@ -72,6 +75,7 @@ if [[ "$OSTYPE" == "darwin20.0" ]]; then
 else
     # This is neccessary otherwise external keyboards don't get the layout change bindings on boot through .xinitrc
     export PATH="$PATH:/home/tarticar/.dotnet/tools"
+alias open='xdg-open'
     alias rm='trash'
     alias rmr='trash-restore'
     alias rml='trash-list'
