@@ -124,7 +124,6 @@ return packer.startup(function(use)
 	use({ "kylechui/nvim-surround" }) -- Life saver
 	use({ "danymat/neogen" }) -- Documentation generator
 	use({ "folke/todo-comments.nvim" }) -- todo, hack, warn, perf, note
-	use({ "rmagatti/auto-session" }) -- session managment
 	use({ "Pocco81/true-zen.nvim" }) -- no distraction mode
 	use({ "karb94/neoscroll.nvim" }) -- sexy scrolling
 	use({ "ahmedkhalf/project.nvim" }) -- telescope always at root of the project
