@@ -127,6 +127,7 @@ return packer.startup(function(use)
 	use({ "rmagatti/auto-session" }) -- session managment
 	use({ "Pocco81/true-zen.nvim" }) -- no distraction mode
 	use({ "karb94/neoscroll.nvim" }) -- sexy scrolling
+	use({ "ahmedkhalf/project.nvim" }) -- telescope always at root of the project
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
