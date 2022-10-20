@@ -19,7 +19,7 @@ vim.diagnostic.config({ virtual_text = false, underline = false, update_in_inser
 local M = {}
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.offsetEncoding = { "utf-16" }
-M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
 M.setup = function()
 	local signs = {
