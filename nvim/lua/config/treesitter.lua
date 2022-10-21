@@ -23,4 +23,7 @@ configs.setup({
 	},
 })
 
-require("treesitter-context").setup()
+require("treesitter-context").setup({
+	mode = "topline",
+	line_numbers = true,
+})
