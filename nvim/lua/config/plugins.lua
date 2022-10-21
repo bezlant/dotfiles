@@ -125,7 +125,7 @@ return packer.startup(function(use)
 	use({ "danymat/neogen" }) -- Documentation generator
 	use({ "folke/todo-comments.nvim" }) -- todo, hack, warn, perf, note
 	use({ "Pocco81/true-zen.nvim" }) -- no distraction mode
-
+	use({ "nvim-treesitter/nvim-treesitter-context" })
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
