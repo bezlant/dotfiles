@@ -35,6 +35,7 @@ local options = {
 	splitright = true,
 	incsearch = true,
 	linebreak = true,
+	foldmarker = "{,}",
 }
 
 for key, value in pairs(options) do
