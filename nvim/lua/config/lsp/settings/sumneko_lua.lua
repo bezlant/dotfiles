@@ -6,6 +6,10 @@ return {
 				path = vim.split(package.path, ";"),
 			},
 
+			hint = {
+				enable = true,
+			},
+
 			diagnostics = {
 				enable = true,
 				globals = { "vim" },

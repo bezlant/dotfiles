@@ -46,8 +46,6 @@ for _, server in pairs(servers) do
         capabilities = require("config.lsp.handlers").capabilities,
     }
 
-    server = vim.split(server, "@")[1]
-
     local has_custom_opts, custom_opts = pcall(require, "config.lsp.settings." .. server)
 
     if has_custom_opts then
