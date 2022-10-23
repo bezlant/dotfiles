@@ -5,7 +5,7 @@ if not ok then
 end
 
 local border_opts = {
-	focusable = false,
+	focusable = true,
 	style = "minimal",
 	border = "rounded",
 	source = "always",

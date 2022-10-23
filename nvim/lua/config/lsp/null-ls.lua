@@ -12,6 +12,7 @@ null_ls.setup({
 	sources = {
 		formatting.stylua,
 		formatting.shfmt,
+		formatting.goimports,
 		diagnostics.shellcheck,
 		diagnostics.cppcheck.with({
 			-- method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
