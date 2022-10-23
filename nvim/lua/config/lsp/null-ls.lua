@@ -19,5 +19,6 @@ null_ls.setup({
 				"--enable=style,performance,portability,warning",
 			},
 		}),
+		diagnostics.golangci_lint,
 	},
 })
