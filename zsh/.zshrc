@@ -57,6 +57,7 @@ if [[ $TERM == xterm ]]; then
 fi
 
 if [[ "$OSTYPE" == "darwin20.0" ]]; then 
+    export GOPATH="/Users/tarticar/go"
     export PATH="/opt/goinfre/tarticar/homebrew/sbin:$PATH"
     export PATH="/opt/goinfre/tarticar/homebrew/bin:$PATH"
     export PATH="/opt/goinfre/tarticar/homebrew/opt/llvm/bin/:$PATH"
@@ -74,14 +75,13 @@ if [[ "$OSTYPE" == "darwin20.0" ]]; then
     fi
 else
     # This is neccessary otherwise external keyboards don't get the layout change bindings on boot through .xinitrc
+    export GOPATH="/home/tarticar/go"
     export PATH="$PATH:/home/tarticar/.dotnet/tools"
-alias open='xdg-open'
+    alias open='xdg-open'
     alias rm='trash'
     alias rmr='trash-restore'
     alias rml='trash-list'
     setxkbmap -layout us,ru -option grp:alt_shift_toggle
     setxkbmap -option caps:escape
 fi
-
-
-
+export PATH="$GOPATH/bin:$PATH"
