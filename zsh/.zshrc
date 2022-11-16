@@ -85,3 +85,4 @@ else
     setxkbmap -option caps:escape
 fi
 export PATH="$GOPATH/bin:$PATH"
+eval $(thefuck --alias)

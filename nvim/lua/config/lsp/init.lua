@@ -28,6 +28,14 @@ local servers = {
 	"cmake",
 	"marksman",
 	"omnisharp",
+	"jsonls",
+	"cssls",
+	"tailwindcss",
+	"html",
+	"tsserver",
+	"eslint",
+	"yamlls",
+	"solc",
 }
 
 lsp_installer.setup({
