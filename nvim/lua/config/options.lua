@@ -91,34 +91,34 @@ vim.cmd([[
 ]])
 
 -- Adjust padding in Alacritty
-function Sad(line_nr, from, to, fname)
-	vim.cmd(string.format("silent !sed -i'' -e '%ss/%s/%s/g' %s", line_nr, from, to, fname))
-end
-
-function IncreasePadding()
-	Sad("9", 0, 5, "~/.config/alacritty/alacritty.yml")
-	Sad("10", 0, 5, "~/.config/alacritty/alacritty.yml")
-end
-
-function DecreasePadding()
-	Sad("9", 5, 0, "~/.config/alacritty/alacritty.yml")
-	Sad("10", 5, 0, "~/.config/alacritty/alacritty.yml")
-end
-
-vim.cmd([[
-  augroup ChangeAlacrittyPadding
-   au! 
-   au VimEnter * lua DecreasePadding()
-   au VimLeavePre * lua IncreasePadding()
-  augroup END 
-]])
-
-vim.cmd([[
-augroup CursorLine
-    au!
-    au VimEnter * setlocal cursorline
-    au WinEnter * setlocal cursorline
-    au BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
-augroup END
-]])
+-- function Sad(line_nr, from, to, fname)
+-- 	vim.cmd(string.format("silent !sed -i'' -e '%ss/%s/%s/g' %s", line_nr, from, to, fname))
+-- end
+--
+-- function IncreasePadding()
+-- 	Sad("9", 0, 5, "~/.config/alacritty/alacritty.yml")
+-- 	Sad("10", 0, 5, "~/.config/alacritty/alacritty.yml")
+-- end
+--
+-- function DecreasePadding()
+-- 	Sad("9", 5, 0, "~/.config/alacritty/alacritty.yml")
+-- 	Sad("10", 5, 0, "~/.config/alacritty/alacritty.yml")
+-- end
+--
+-- vim.cmd([[
+--   augroup ChangeAlacrittyPadding
+--    au!
+--    au VimEnter * lua DecreasePadding()
+--    au VimLeavePre * lua IncreasePadding()
+--   augroup END
+-- ]])
+--
+-- vim.cmd([[
+-- augroup CursorLine
+--     au!
+--     au VimEnter * setlocal cursorline
+--     au WinEnter * setlocal cursorline
+--     au BufWinEnter * setlocal cursorline
+--     au WinLeave * setlocal nocursorline
+-- augroup END
+-- ]])
