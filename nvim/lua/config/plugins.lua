@@ -134,6 +134,7 @@ return packer.startup(function(use)
 	})
 	use({ "MunifTanjim/prettier.nvim" })
 	use({ "windwp/nvim-ts-autotag" })
+	use({ "gpanders/editorconfig.nvim" })
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
