@@ -1,0 +1,95 @@
+{
+    EncodedWindowManager = {length = 17992, bytes = 0x7b227363 7265656e 73223a7b 22736372 ... 227d5d7d 7d7d7d7d };
+    "NSStatusItem Preferred Position Item-0" = 280;
+    "NSWindow Frame SUUpdateAlert" = "970 762 620 398 0 0 2560 1415 ";
+    SUEnableAutomaticChecks = 1;
+    SUFeedURL = "https://ianyh.com/amethyst/appcast.xml";
+    SUHasLaunchedBefore = 1;
+    SULastCheckTime = "2022-11-20 04:12:27 +0000";
+    SUSendProfileInfo = 0;
+    SUSkippedVersion = 94;
+    "cycle-layout" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "cycle-layout-backward" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "debug-layout-info" = 0;
+    "decrease-main" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "display-current-layout" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "enables-layout-hud" = 1;
+    "enables-layout-hud-on-space-change" = 1;
+    "expand-main" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "float-small-windows" = 1;
+    floating =     (
+    );
+    "floating-is-blacklist" = 1;
+    "focus-ccw" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "focus-cw" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "focus-follows-mouse" = 0;
+    "focus-main" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "focus-screen-1" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "focus-screen-2" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "focus-screen-3" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "focus-screen-4" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "focus-screen-ccw" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "focus-screen-cw" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "follow-space-thrown-windows" = 1;
+    "ignore-menu-bar" = 0;
+    "increase-main" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    layouts =     (
+        tall,
+        wide,
+        fullscreen,
+        column
+    );
+    mod1 =     (
+        option,
+        shift
+    );
+    mod2 =     (
+        option,
+        shift,
+        control
+    );
+    "mouse-follows-focus" = 0;
+    "new-windows-to-main" = 0;
+    "reevaluate-windows" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "relaunch-amethyst" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "restore-layouts-on-launch" = 1;
+    "screen-padding-bottom" = 0;
+    "screen-padding-left" = 0;
+    "screen-padding-right" = 0;
+    "screen-padding-top" = 0;
+    "select-column-layout" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "select-fullscreen-layout" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "select-tall-layout" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "select-wide-layout" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "shrink-main" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "swap-ccw" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "swap-cw" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "swap-main" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "swap-screen-ccw" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "swap-screen-cw" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "throw-screen-1" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "throw-screen-2" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "throw-screen-3" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "throw-screen-4" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "throw-space-1" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "throw-space-10" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "throw-space-2" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "throw-space-3" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "throw-space-4" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "throw-space-5" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "throw-space-6" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "throw-space-7" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "throw-space-8" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "throw-space-9" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "throw-space-left" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "throw-space-right" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "toggle-float" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "toggle-focus-follows-mouse" = {length = 135, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000005b };
+    "toggle-tiling" = {length = 257, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+    "use-canary-build" = 0;
+    "window-margin-size" = 0;
+    "window-margins" = 0;
+    "window-minimum-height" = 0;
+    "window-minimum-width" = 0;
+    "window-resize-step" = 5;
+}
