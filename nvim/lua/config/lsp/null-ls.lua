@@ -19,6 +19,7 @@ null_ls.setup({
 			-- method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
 			extra_args = {
 				"--enable=style,performance,portability,warning",
+				"--std=c++",
 			},
 		}),
 		diagnostics.golangci_lint,
