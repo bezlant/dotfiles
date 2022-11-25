@@ -74,15 +74,13 @@ if [[ "$OSTYPE" == "darwin20.0" ]]; then
         fi
     fi
 else
-    # This is neccessary otherwise external keyboards don't get the layout change bindings on boot through .xinitrc
     export GOPATH="/home/tarticar/go"
     export PATH="$PATH:/home/tarticar/.dotnet/tools"
     alias open='xdg-open'
-    alias rm='trash'
-    alias rmr='trash-restore'
-    alias rml='trash-list'
+    # This is neccessary otherwise external keyboards don't get the layout change bindings on boot through .xinitrc
     setxkbmap -layout us,ru -option grp:alt_shift_toggle
     setxkbmap -option caps:escape
 fi
+
 export PATH="$GOPATH/bin:$PATH"
 eval $(thefuck --alias)

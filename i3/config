@@ -124,7 +124,7 @@ bindsym $mod+Shift+q		    exec "my3lock"
 
 # default gaps 
 for_window [class="^.*"] border pixel 2
-gaps inner 0
+gaps inner 5
 
 # resize gaps
 bindsym $mod+Shift+d		    gaps inner current set 0; gaps outer current set 0
