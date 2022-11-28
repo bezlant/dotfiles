@@ -68,10 +68,10 @@ vim.api.nvim_create_autocmd(
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, { command = "checktime" })
 
 -- Easily close useless buffers
-vim.api.nvim_create_autocmd(
-	"FileType",
-	{ pattern = { "help", "startuptime", "qf", "lspinfo" }, command = [[ nnoremap <buffer><silent> q :close<CR> ]] }
-)
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "sqls_output", "help", "startuptime", "qf", "lspinfo" },
+	command = [[ nnoremap <buffer><silent> q :close<CR> ]],
+})
 
 vim.api.nvim_create_autocmd("FileType", { pattern = { "man" }, command = [[ nnoremap <buffer><silent> q :quit<CR> ]] })
 
