@@ -74,7 +74,12 @@ M.on_attach = function(client, bufnr)
 			end,
 		})
 	end
+
 	lsp_keymaps()
+
+	if client.name == "sqls" then
+		require("sqls").on_attach(client, bufnr)
+	end
 end
 
 vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
