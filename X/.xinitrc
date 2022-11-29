@@ -29,7 +29,7 @@ fi
 feh --bg-fill --randomize ~/.wallpapers &
 clight &
 xautolock -time 15 -locker my3lock &
-picom --experimental-backends &
+picom &
 setxkbmap -option caps:escape
 setxkbmap -layout us,ru -option grp:alt_shift_toggle
 exec i3
