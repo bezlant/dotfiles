@@ -76,6 +76,7 @@ if [[ "$OSTYPE" == "darwin20.0" ]]; then
 else
     export GOPATH="/home/tarticar/go"
     export PATH="$PATH:/home/tarticar/.dotnet/tools"
+    export PATH="$PATH:/home/tarticar/.local/bin"
     alias open='xdg-open'
     # This is neccessary otherwise external keyboards don't get the layout change bindings on boot through .xinitrc
     setxkbmap -layout us,ru -option grp:alt_shift_toggle
