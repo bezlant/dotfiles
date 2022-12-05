@@ -14,6 +14,9 @@ null_ls.setup({
 		formatting.shfmt,
 		formatting.goimports,
 		formatting.prettierd,
+		formatting.sqlfluff.with({
+			extra_args = { "--dialect", "postgres" },
+		}),
 		diagnostics.shellcheck,
 		diagnostics.cppcheck.with({
 			-- method = null_ls.methods.DIAGNOSTICS_ON_SAVE,

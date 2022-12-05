@@ -28,7 +28,7 @@ local servers = {
 	"bashls",
 	"cmake",
 	"marksman",
-	"omnisharp",
+	-- "omnisharp",
 	"jsonls",
 	"cssls",
 	"tailwindcss",
