@@ -64,14 +64,13 @@ end
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 M.on_attach = function(client, bufnr)
-	-- if client.name ~= "sqls" and client.supports_method("textDocument/formatting") then
-	if client.supports_method("textDocument/formatting") then
+	if client.name ~= "sqls" and client.supports_method("textDocument/formatting") then
 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			group = augroup,
 			buffer = bufnr,
 			callback = function()
-				vim.lsp.buf.format({ bufnr = bufnr })
+				vim.lsp.buf.format()
 			end,
 		})
 	end
@@ -79,6 +78,8 @@ M.on_attach = function(client, bufnr)
 	lsp_keymaps()
 
 	if client.name == "sqls" then
+		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.documentRangeFormattingProvider = false
 		require("sqls").on_attach(client, bufnr)
 	end
 end
