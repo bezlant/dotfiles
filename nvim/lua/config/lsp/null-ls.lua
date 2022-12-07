@@ -3,6 +3,7 @@ if not ok then
 	vim.notify("Can't load null-ls, please install it")
 	return
 end
+
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
@@ -22,7 +23,7 @@ null_ls.setup({
 		}),
 		diagnostics.shellcheck,
 		diagnostics.cppcheck.with({
-			-- method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+			method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
 			extra_args = {
 				"--enable=style,performance,portability,warning",
 				"--std=c++",
@@ -37,7 +38,7 @@ null_ls.setup({
 				group = augroup,
 				buffer = bufnr,
 				callback = function()
-					vim.lsp.buf.format({ bufnr = bufnr })
+					vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = 2000 })
 				end,
 			})
 		end
