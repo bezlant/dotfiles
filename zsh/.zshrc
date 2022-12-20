@@ -61,7 +61,7 @@ if [[ "$OSTYPE" == "darwin20.0" ]]; then
     export PATH="/opt/goinfre/tarticar/homebrew/sbin:$PATH"
     export PATH="/opt/goinfre/tarticar/homebrew/bin:$PATH"
     export PATH="/opt/goinfre/tarticar/homebrew/opt/llvm/bin/:$PATH"
-    export PATH="/Users/tarticar/Library/Python/3.8/bin:$PATH"
+    export PATH="/Users/tarticar/Library/Python/3.9/bin:$PATH"
     export LDFLAGS="-L/opt/goinfre/tarticar/homebrew/opt/llvm/lib"
     export CPPFLAGS="-I/opt/goinfre/tarticar/homebrew/opt/llvm/include"
     export PATH="$PATH:/Users/tarticar/.dotnet/tools"
@@ -86,4 +86,3 @@ fi
 export PATH="$GOPATH/bin:$PATH"
 eval $(thefuck --alias)
 export _JAVA_OPTIONS="-Dsun.java2d.dpiaware=true -Dsun.java2d.uiScale=2"
-
