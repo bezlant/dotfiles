@@ -1,9 +1,9 @@
-# Startup X 
+# Startup X
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	exec startx
 fi
 
-# Path to zsh folder 
+# Path to zsh folder
 export ZSH="$HOME/.config/zsh"
 
 # Theme & Plugins
@@ -56,11 +56,13 @@ if [[ $TERM == xterm ]]; then
     TERM=xterm-256color
 fi
 
-if [[ "$OSTYPE" == "darwin20.0" ]]; then 
+if [[ "$OSTYPE" == "darwin20.0" ]]; then
     export GOPATH="/Users/tarticar/go"
     export PATH="/opt/goinfre/tarticar/homebrew/sbin:$PATH"
     export PATH="/opt/goinfre/tarticar/homebrew/bin:$PATH"
     export PATH="/opt/goinfre/tarticar/homebrew/opt/llvm/bin/:$PATH"
+    export NPM_CONFIG_USERCONFIG="/opt/goinfre/tarticar/.npm/"
+    export YARN_CACHE_FOLDER="/opt/goinfre/tarticar/.yarn/"
     # export PATH="/Users/tarticar/Library/Python/3.8/bin:$PATH"
     # export PATH="/Users/tarticar/Library/Python/3.9/bin:$PATH"
     export PATH="/Users/tarticar/.local/share/nvim/mason/bin:$PATH"
