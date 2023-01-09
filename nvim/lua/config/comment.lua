@@ -57,16 +57,10 @@ end
 -- 1. Using set function
 
 ft
-	-- Set only line comment
+	-- Set both line and block commentstring
 	.set("yaml", { "#%s", "#%s" })
-	-- Or set both line and block commentstring
-	.set("javascript", { "{/*%s*/}", "{/*%s*/}" })
-	.set("typescriptreact", { "{/*%s*/}", "{/*%s*/}" })
-
--- 2. Metatable magic
-
-ft.javascript = { "//%s", "/*%s*/" }
-ft.yaml = "#%s"
+	.set("javascript", { "/*%s*/", "{/*%s*/}" })
+	.set("typescriptreact", { "/*%s*/", "{/*%s*/}" })
 
 -- Multiple filetypes
 ft({ "go", "rust" }, ft.get("c"))
