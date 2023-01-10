@@ -141,7 +141,6 @@ map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", opts)
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
 
 -- Vimgrep, grep, quickfix list, jump list cycle
-map("n", "<leader>o", "<cmd>cnext<CR>", opts)
-map("n", "<leader>q", "<cmd>cnext<CR>", opts)
+map("n", "<leader>o", "<cmd>copen<CR>", opts)
 map("n", "<leader>cn", "<cmd>cnext<CR>", opts)
 map("n", "<leader>cp", "<cmd>cprev<CR>", opts)
