@@ -136,6 +136,12 @@ return packer.startup(function(use)
 	use({ "windwp/nvim-ts-autotag" })
 	use({ "gpanders/editorconfig.nvim" })
 	use({ "nanotee/sqls.nvim" })
+	use({
+		"glacambre/firenvim",
+		run = function()
+			vim.fn["firenvim#install"](0)
+		end,
+	})
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
