@@ -39,6 +39,8 @@ alias bmake='bear -- make'
 alias tsm='transmission-remote'
 alias db='dotnet build'
 alias dr='dotnet run'
+alias gcnv='git commit --no-verify'
+alias gpnv='git push --no-verify'
 
 # Exports
 export GPG_TTY=$(tty)
@@ -51,6 +53,7 @@ export LANG=en_US.UTF-8
 export HISTFILE="$HOME/.cache/.zsh_history"
 export LESSHISTFILE="$HOME/.cache/.less_history"
 export FILE="ranger"
+export DOCKER_CONTENT_TRUST=1
 
 if [[ $TERM == xterm ]]; then
     TERM=xterm-256color
@@ -63,7 +66,7 @@ if [[ "$OSTYPE" == "darwin20.0" ]]; then
     export PATH="/opt/goinfre/tarticar/homebrew/opt/llvm/bin/:$PATH"
     export NPM_CONFIG_USERCONFIG="/opt/goinfre/tarticar/.npm/"
     export YARN_CACHE_FOLDER="/opt/goinfre/tarticar/.yarn/"
-    # export PATH="/Users/tarticar/Library/Python/3.8/bin:$PATH"
+    export PATH="/usr/local/bin:$PATH"
     # export PATH="/Users/tarticar/Library/Python/3.9/bin:$PATH"
     export PATH="/Users/tarticar/.local/share/nvim/mason/bin:$PATH"
     export LDFLAGS="-L/opt/goinfre/tarticar/homebrew/opt/llvm/lib"
