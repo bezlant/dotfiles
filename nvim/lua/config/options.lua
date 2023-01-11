@@ -10,6 +10,7 @@ local options = {
 	guifont = "monospace:h17",
 	hlsearch = true,
 	ignorecase = true,
+	infercase = true,
 	number = true,
 	numberwidth = 2,
 	pumheight = 5,
