@@ -6,6 +6,7 @@ end
 
 bufferline.setup({
 	options = {
+		numbers = "ordinal",
 		themable = true,
 		close_command = "Bdelete! %d",
 		show_close_icon = false,
@@ -13,7 +14,8 @@ bufferline.setup({
 		modified_icon = "*",
 		tab_size = 15,
 		max_name_length = 18,
-		always_show_bufferline = false,
+		always_show_bufferline = true,
+		enforce_regular_tabs = true,
 		separator_style = "thin",
 	},
 

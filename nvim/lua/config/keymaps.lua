@@ -103,6 +103,8 @@ map("v", "<leader>y", '"+y', opts)
 -- Easy paste from the system clipboard
 map("n", "<leader>p", '"+p', opts)
 map("v", "<leader>p", '"+p', opts)
+map("n", "<leader>P", '"+P', opts)
+map("v", "<leader>P", '"+P', opts)
 
 -- You need this
 map("n", "<leader>x", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
@@ -144,3 +146,15 @@ map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
 map("n", "<leader>o", "<cmd>copen<CR>", opts)
 map("n", "<leader>cn", "<cmd>cnext<CR>", opts)
 map("n", "<leader>cp", "<cmd>cprev<CR>", opts)
+
+-- Buferline shortcuts
+map("n", "<leader>1", "<cmd>lua require('bufferline').go_to_buffer(1, true)<cr>")
+map("n", "<leader>2", "<cmd>lua require('bufferline').go_to_buffer(2, true)<cr>")
+map("n", "<leader>3", "<cmd>lua require('bufferline').go_to_buffer(3, true)<cr>")
+map("n", "<leader>4", "<cmd>lua require('bufferline').go_to_buffer(4, true)<cr>")
+map("n", "<leader>5", "<cmd>lua require('bufferline').go_to_buffer(5, true)<cr>")
+map("n", "<leader>6", "<cmd>lua require('bufferline').go_to_buffer(6, true)<cr>")
+map("n", "<leader>7", "<cmd>lua require('bufferline').go_to_buffer(7, true)<cr>")
+map("n", "<leader>8", "<cmd>lua require('bufferline').go_to_buffer(8, true)<cr>")
+map("n", "<leader>9", "<cmd>lua require('bufferline').go_to_buffer(9, true)<cr>")
+map("n", "<leader>$", "<cmd>lua require('bufferline').go_to_buffer(-1, true)<cr>")
