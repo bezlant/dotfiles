@@ -142,6 +142,9 @@ return packer.startup(function(use)
 			vim.fn["firenvim#install"](0)
 		end,
 	})
+	use({
+		"benfowler/telescope-luasnip.nvim",
+	})
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
