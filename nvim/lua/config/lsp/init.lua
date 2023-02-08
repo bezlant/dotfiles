@@ -29,6 +29,7 @@ local servers = {
 	"cmake",
 	"marksman",
 	-- "omnisharp",
+	"cssmodules_ls",
 	"jsonls",
 	"cssls",
 	"tailwindcss",

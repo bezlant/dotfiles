@@ -93,3 +93,5 @@ fi
 export PATH="$GOPATH/bin:$PATH"
 eval $(thefuck --alias)
 export _JAVA_OPTIONS="-Dsun.java2d.dpiaware=true -Dsun.java2d.uiScale=2"
+stty stop undef
+stty start undef
