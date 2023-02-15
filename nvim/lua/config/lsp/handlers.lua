@@ -19,6 +19,7 @@ vim.diagnostic.config({ virtual_text = false, underline = false, update_in_inser
 local M = {}
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
+M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities.offsetEncoding = "utf-16"
 
 M.setup = function()

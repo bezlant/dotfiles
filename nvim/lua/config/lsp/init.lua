@@ -33,6 +33,7 @@ local servers = {
 	"jsonls",
 	"cssls",
 	"tailwindcss",
+	"stylelint_lsp",
 	"html",
 	"tsserver",
 	"eslint",

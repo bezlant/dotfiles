@@ -15,8 +15,8 @@ bufferline.setup({
 		tab_size = 15,
 		max_name_length = 18,
 		always_show_bufferline = true,
-		enforce_regular_tabs = true,
 		separator_style = "thin",
+		enforce_regular_tabs = false,
 	},
 
 	highlights = {
