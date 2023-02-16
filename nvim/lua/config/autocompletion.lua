@@ -51,12 +51,9 @@ cmp.setup({
 			luasnip.lsp_expand(args.body)
 		end,
 	},
-
 	mapping = {
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
-		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-		["<C-g>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
 		["<leader>q"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 		["<C-e>"] = cmp.mapping({
 			i = cmp.mapping.abort(),
@@ -95,7 +92,6 @@ cmp.setup({
 			"s",
 		}),
 	},
-
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
 
@@ -112,7 +108,6 @@ cmp.setup({
 			return vim_item
 		end,
 	},
-
 	sources = {
 		{ name = "nvim_lsp_signature_help" },
 		{ name = "nvim_lsp" },
@@ -121,12 +116,10 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "path" },
 	},
-
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
-
 	window = {
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },

@@ -59,16 +59,13 @@ map("x", "K", ":move '<-2<CR>gv-gv", opts)
 map("x", "<A-j>", "<cmd>m '>+1<CR>gv=gv", opts)
 map("x", "<A-k>", "<cmd>m '<-2<CR>gv=gv", opts)
 
--- Don't copy on paste
-map("v", "p", '"_dP', opts)
-
 -- Map global register to '|'
 map("n", '"|', '"+', opts)
 
 -- Bbye & Buffers
 map("n", "<leader>bd", "<cmd>Bdelete! %<CR>", opts)
-map("n", "<leader>h", "<cmd>bprevious<cr>zz", opts)
-map("n", "<leader>l", "<cmd>bnext<cr>zz", opts)
+map("n", "<leader>h", "<cmd>bprevious<cr>zt", opts)
+map("n", "<leader>l", "<cmd>bnext<cr>zt", opts)
 map("n", "<leader>ba", "<cmd>bufdo :Bdelete<CR>", opts)
 map("n", "<leader>bo", "<cmd>%bd|e#|bd#<CR>", opts)
 
@@ -77,7 +74,7 @@ map("n", "<leader>tn", "<cmd>tabnew<cr>", opts)
 map("n", "<leader>to", "<cmd>tabonly<cr>", opts)
 map("n", "<leader>tc", "<cmd>tabclose<cr>", opts)
 map("n", "<leader>tm", "<cmd>tabmove<cr>", opts)
-map("n", "<leader>t<leader>", "<cmd>tabnext<cr>zz", opts)
+map("n", "<leader>t<leader>", "<cmd>tabnext<cr>zt", opts)
 
 -- Custom
 -- Save on leader + w
@@ -93,8 +90,8 @@ map("n", "0", "^", opts)
 -- map("n", "Y", "yg$", opts)
 
 -- Scrolling improved (Neoscroll fixes this)
-map("n", "<C-d>", "<C-d>zz", opts)
-map("n", "<C-u>", "<C-u>zz", opts)
+map("n", "<C-d>", "<C-d>zt", opts)
+map("n", "<C-u>", "<C-u>zt", opts)
 
 -- Easy yank to the system clipboard
 map("n", "<leader>y", '"+y', opts)
@@ -110,8 +107,8 @@ map("v", "<leader>P", '"+P', opts)
 map("n", "<leader>x", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
 
 -- Search improved
-map("n", "n", "nzzzv", opts)
-map("n", "N", "Nzzzv", opts)
+map("n", "n", "nztzv", opts)
+map("n", "N", "Nztzv", opts)
 
 -- Get to the current folder
 map("n", "<leader>cd", "<cmd>cd %:p:h<cr><cmd>:pwd<cr>", opts)
