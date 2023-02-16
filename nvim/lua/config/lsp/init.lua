@@ -23,8 +23,8 @@ mason.setup({
 local servers = {
 	"sqls",
 	"gopls",
-	"sumneko_lua",
 	"clangd",
+	"lua_ls",
 	"bashls",
 	"cmake",
 	"marksman",
