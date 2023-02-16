@@ -126,22 +126,10 @@ return packer.startup(function(use)
 	use({ "folke/todo-comments.nvim" }) -- todo, hack, warn, perf, note
 	use({ "Pocco81/true-zen.nvim" }) -- no distraction mode
 	use({ "nvim-treesitter/nvim-treesitter-context" })
-	-- use({
-	-- 	"lvimuser/lsp-inlayhints.nvim",
-	-- 	config = function()
-	-- 		require("lsp-inlayhints").setup()
-	-- 	end,
-	-- })
 	use({ "MunifTanjim/prettier.nvim" })
 	use({ "windwp/nvim-ts-autotag" })
 	use({ "gpanders/editorconfig.nvim" })
 	use({ "nanotee/sqls.nvim" })
-	use({
-		"glacambre/firenvim",
-		run = function()
-			vim.fn["firenvim#install"](0)
-		end,
-	})
 	use({
 		"benfowler/telescope-luasnip.nvim",
 	})

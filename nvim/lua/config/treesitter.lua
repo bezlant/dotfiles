@@ -1,20 +1,16 @@
-local configs = require("nvim-treesitter.configs")
-configs.setup({
+local treesitter_configs = require("nvim-treesitter.configs")
+treesitter_configs.setup({
 	autotag = {
 		enable = true,
 	},
-	ensure_installed = { "c", "lua", "cpp", "go" },
 	sync_install = false,
 	auto_install = true,
-
 	highlight = {
 		enable = true,
 		additional_vim_regex_highlighting = false,
 	},
-
 	indent = { enable = true },
 	fold = { enable = true },
-
 	incremental_selection = {
 		enable = true,
 		keymaps = {

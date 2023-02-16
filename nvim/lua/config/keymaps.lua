@@ -136,6 +136,7 @@ map("n", "<leader>fm", "<cmd>Telescope man_pages<cr>", opts)
 map("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", opts)
 map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", opts)
 map("n", "<leader>fs", "<cmd>Telescope luasnip<cr>", opts)
+map("n", "<leader>fy", "<cmd>Telescope yank_history<cr>", opts)
 
 -- NvimTree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
@@ -156,3 +157,38 @@ map("n", "<leader>7", "<cmd>lua require('bufferline').go_to_buffer(7, true)<cr>"
 map("n", "<leader>8", "<cmd>lua require('bufferline').go_to_buffer(8, true)<cr>", opts)
 map("n", "<leader>9", "<cmd>lua require('bufferline').go_to_buffer(9, true)<cr>", opts)
 map("n", "<leader>$", "<cmd>lua require('bufferline').go_to_buffer(-1, true)<cr>", opts)
+
+-- Zen
+map("n", "<leader>z", "<cmd>TZAtaraxis<CR>", opts)
+
+-- Yanky
+map("x", "y", "<Plug>(YankyYank)", {})
+map("n", "y", "<Plug>(YankyYank)", {})
+map("n", "y", "<Plug>(YankyYank)", {})
+map("n", "p", "<Plug>(YankyPutAfter)", {})
+map("n", "p", "<Plug>(YankyPutAfter)", {})
+map("n", "P", "<Plug>(YankyPutBefore)", {})
+map("x", "p", "<Plug>(YankyPutAfter)", {})
+map("x", "P", "<Plug>(YankyPutBefore)", {})
+map("n", "gp", "<Plug>(YankyGPutAfter)", {})
+map("n", "gP", "<Plug>(YankyGPutBefore)", {})
+map("x", "gp", "<Plug>(YankyGPutAfter)", {})
+map("x", "gP", "<Plug>(YankyGPutBefore)", {})
+map("n", "<c-p>", "<Plug>(YankyCycleForward)", {})
+map("n", "<c-n>", "<Plug>(YankyCycleBackward)", {})
+
+-- DAP
+map("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+map("n", "<leader>bl", "<cmd>lua require'dap'.list_breakpoints()<cr>", opts)
+map("n", "<leader>bc", "<cmd>lua require'dap'.clear_breakpoints()<cr>", opts)
+map("n", "<leader>B", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
+map("n", "<leader>si", "<cmd>lua require'dap'.step_into()<cr>", opts)
+map("n", "<leader>ss", "<cmd>lua require'dap'.step_over()<cr>", opts)
+map("n", "<leader>so", "<cmd>lua require'dap'.step_out()<cr>", opts)
+map("n", "<leader>sb", "<cmd>lua require'dap'.step_back()<cr>", opts)
+map("n", "<leader>co", "<cmd>lua require'dap'.continue()<cr>", opts)
+map("n", "<leader>cl", "<cmd>lua require'dap'.terminate()<cr>", opts)
+map("n", "<leader>\\", "<cmd>lua require'dapui'.toggle()<cr>", opts)
+
+-- Neogen (Doxxygen)
+map("n", "<leader>n", "<cmd>Neogen func<cr>", opts)

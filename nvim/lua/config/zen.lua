@@ -4,9 +4,6 @@ if not ok then
 	return
 end
 
-local map = require("config.utils").map
-map("n", "<leader>z", "<cmd>TZAtaraxis<CR>", { noremap = true })
-
 local tmux_off = function()
 	if vim.fn.exists("$TMUX") == 0 then
 		return

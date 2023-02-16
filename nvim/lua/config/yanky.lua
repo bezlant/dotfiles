@@ -8,22 +8,10 @@ yanky.setup({
 	highlight = {
 		timer = 150,
 	},
-
+	preserve_cursor_position = {
+		enabled = true,
+	},
 	system_clipboard = {
 		sync_with_ring = false,
 	},
 })
-
--- Keymaps
-local map = require("config.utils").map
-
-map("n", "p", "<Plug>(YankyPutAfter)", {})
-map("n", "P", "<Plug>(YankyPutBefore)", {})
-map("x", "p", "<Plug>(YankyPutAfter)", {})
-map("x", "P", "<Plug>(YankyPutBefore)", {})
-map("n", "gp", "<Plug>(YankyGPutAfter)", {})
-map("n", "gP", "<Plug>(YankyGPutBefore)", {})
-map("x", "gp", "<Plug>(YankyGPutAfter)", {})
-map("x", "gP", "<Plug>(YankyGPutBefore)", {})
-map("n", "<c-p>", "<Plug>(YankyCycleForward)", {})
-map("n", "<c-n>", "<Plug>(YankyCycleBackward)", {})

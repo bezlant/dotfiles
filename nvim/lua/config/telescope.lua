@@ -82,4 +82,5 @@ telescope.setup({
 
 -- Extensions
 telescope.load_extension("dap")
+telescope.load_extension("yank_history")
 telescope.load_extension("luasnip")

@@ -26,7 +26,7 @@ alias tree="ls -T"
 alias l="la"
 alias clang-dump="clang-format -style=llvm -dump-config > .clang-format"
 alias vg='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind_result.txt'
-alias nrc='nvim -c "cd" ~/.config/nvim/lua/config'
+alias nrc='nvim -c "cd ~/.config/nvim/lua/config" ~/.config/nvim/lua/config/plugins.lua'
 alias gcl='git clone'
 alias lg='lazygit'
 function fn_zathura {

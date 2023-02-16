@@ -4,22 +4,6 @@ if not dap_ok then
 	return
 end
 
--- Keymappings
-local map = require("config.utils").map
-local opts = { noremap = true }
-
-map("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
-map("n", "<leader>bl", "<cmd>lua require'dap'.list_breakpoints()<cr>", opts)
-map("n", "<leader>bc", "<cmd>lua require'dap'.clear_breakpoints()<cr>", opts)
-map("n", "<leader>B", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
-map("n", "<leader>si", "<cmd>lua require'dap'.step_into()<cr>", opts)
-map("n", "<leader>ss", "<cmd>lua require'dap'.step_over()<cr>", opts)
-map("n", "<leader>so", "<cmd>lua require'dap'.step_out()<cr>", opts)
-map("n", "<leader>sb", "<cmd>lua require'dap'.step_back()<cr>", opts)
-map("n", "<leader>co", "<cmd>lua require'dap'.continue()<cr>", opts)
-map("n", "<leader>cl", "<cmd>lua require'dap'.terminate()<cr>", opts)
-map("n", "<leader>\\", "<cmd>lua require'dapui'.toggle()<cr>", opts)
-
 -- Dap Setup
 dap.adapters.lldb = { type = "executable", command = "/usr/bin/lldb-vscode", name = "lldb" }
 
