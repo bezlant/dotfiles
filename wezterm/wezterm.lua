@@ -3,6 +3,7 @@ return {
 	color_scheme = "Dracula (Official)",
 	enable_tab_bar = false,
 	tab_bar_at_bottom = false,
+	use_fancy_tab_bar = false,
 	window_decorations = "RESIZE",
 	font = wezterm.font("VictorMono Nerd Font Mono"),
 	font_size = 18,
