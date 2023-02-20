@@ -2,9 +2,9 @@ return {
 	init_options = {
 		preferences = {
 			disableSuggestions = true,
+			quotePreference = "single",
 		},
 	},
-
 	typescript = {
 		inlayHints = {
 			includeInlayParameterNameHints = "all",
@@ -16,7 +16,6 @@ return {
 			includeInlayEnumMemberValueHints = true,
 		},
 	},
-
 	javascript = {
 		inlayHints = {
 			includeInlayParameterNameHints = "all",
