@@ -133,6 +133,14 @@ return packer.startup(function(use)
 	use({
 		"benfowler/telescope-luasnip.nvim",
 	})
+	use({
+		"ThePrimeagen/refactoring.nvim",
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	})
+
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
