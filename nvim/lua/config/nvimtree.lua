@@ -3,33 +3,19 @@ if not status_ok then
 	vim.notify("Can't load nvim-tree")
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-	vim.notify("Can't load nvim-tree-config")
-	return
-end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
-
 nvimtree.setup({
 	auto_reload_on_write = true,
 	disable_netrw = true,
 	hijack_netrw = true,
 	hijack_cursor = true,
 	sync_root_with_cwd = true,
-
 	view = {
 		width = 45,
 		adaptive_size = false,
 		mappings = {
 			custom_only = false,
-			list = {
-				{ key = "v", cb = tree_cb("vsplit") },
-				{ key = "s", cb = tree_cb("split") },
-			},
 		},
 	},
-
 	diagnostics = {
 		enable = true,
 		icons = {
@@ -39,11 +25,9 @@ nvimtree.setup({
 			error = "",
 		},
 	},
-
 	update_focused_file = {
 		update_cwd = true,
 	},
-
 	renderer = {
 		add_trailing = false,
 		group_empty = true,
@@ -89,7 +73,6 @@ nvimtree.setup({
 			"CMakeLists",
 		},
 	},
-
 	filters = {
 		dotfiles = true,
 	},
