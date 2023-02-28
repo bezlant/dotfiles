@@ -17,7 +17,7 @@ bindsym Print exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && 
 # bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # start a terminal
-bindsym $mod+Return 	    exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Return 	    exec --no-startup-id wezterm
 
 # kill focused window
 bindsym $mod+q 		        kill
@@ -144,14 +144,8 @@ bindsym F4   "exec --no-startup-id brightnessctl set 10%-"
 bindsym 	$mod+comma resize grow width 5 px or 5 ppt
 bindsym 	$mod+period resize shrink width 5 px or 5 ppt
 
-# ranger in the 3rd workspace (r for ranger)
-bindsym $mod+r "workspace 3; exec --no-startup-id alacritty -e ranger"
-
 # open my current book in the 5th workspace (v for view)
 bindsym $mod+v "workspace 5; gaps inner current set 0; bar mode hide; exec --no-startup-id zathura ~/Books/Current/*"  
-
-# open up pulsemixer (a for audio)
-bindsym $mod+a  "exec --no-startup-id alacritty -e pulsemixer"
 
 # open up bluetoothctl (m for manager)
 bindsym $mod+m  "exec --no-startup-id blueman-manager"
@@ -163,7 +157,10 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym  --release $mod+c exec --no-startup-id escrotum -s
 
 # make a gif with peek (p for peek)
-bindsym --release $mod+p "exec --no-startup-id peek"
+bindsym --release $mod+p exec --no-startup-id peek
 
 # print screen on mod+`
 bindsym  $mod+grave exec --no-startup-id escrotum
+
+# toggle hdmi output
+bindsym  $mod+o exec --no-startup-id "$HOME/.config/i3/toggleProjector.sh"

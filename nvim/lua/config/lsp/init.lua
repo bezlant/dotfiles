@@ -39,6 +39,7 @@ local servers = {
 	"eslint",
 	"yamlls",
 	"solc",
+	"prismals",
 }
 
 lsp_installer.setup({
