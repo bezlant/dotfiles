@@ -130,16 +130,9 @@ return packer.startup(function(use)
 	use({ "windwp/nvim-ts-autotag" })
 	use({ "gpanders/editorconfig.nvim" })
 	use({ "nanotee/sqls.nvim" })
-	use({
-		"benfowler/telescope-luasnip.nvim",
-	})
-	use({
-		"ThePrimeagen/refactoring.nvim",
-		requires = {
-			{ "nvim-lua/plenary.nvim" },
-			{ "nvim-treesitter/nvim-treesitter" },
-		},
-	})
+	use({ "benfowler/telescope-luasnip.nvim" })
+	use({ "ThePrimeagen/refactoring.nvim" })
+	use({ "rest-nvim/rest.nvim" })
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then

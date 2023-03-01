@@ -245,12 +245,15 @@ map(
 
 -- You can also use below = true here to to change the position of the printf
 -- statement (or set two remaps for either one). This remap must be made in normal mode.
-map("n", "<leader>rp", ":lua require('refactoring').debug.printf({below = false})<CR>", { noremap = true })
+map("n", "<leader>rp", ":lua require('refactoring').debug.printf({below = false})<CR>", opts)
 
 -- Remap in normal mode and passing { normal = true } will automatically find the variable under the cursor and print it
-map("n", "<leader>rd", ":lua require('refactoring').debug.print_var({ normal = true })<CR>", { noremap = true })
+map("n", "<leader>rd", ":lua require('refactoring').debug.print_var({ normal = true })<CR>", opts)
 -- Remap in visual mode will print whatever is in the visual selection
-map("v", "<leader>rd", ":lua require('refactoring').debug.print_var({})<CR>", { noremap = true })
+map("v", "<leader>rd", ":lua require('refactoring').debug.print_var({})<CR>", opts)
 
 -- Cleanup function: this remap should be made in normal mode
-map("n", "<leader>rc", ":lua require('refactoring').debug.cleanup({})<CR>", { noremap = true })
+map("n", "<leader>rc", ":lua require('refactoring').debug.cleanup({})<CR>", opts)
+
+-- Rest nvim
+map("n", "<C-q>", "<Plug>RestNvim", {})
