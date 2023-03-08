@@ -104,10 +104,22 @@ return packer.startup(function(use)
 	})
 
 	-- debugger
-	use({ "mfussenegger/nvim-dap" }) -- Debugger
-	use({ "rcarriga/nvim-dap-ui" }) -- A simple UI out of the box
+	use({
+		"mfussenegger/nvim-dap",
+		requires = { "mxsdev/nvim-dap-vscode-js" },
+	}) -- Debugger
+	use({
+		"rcarriga/nvim-dap-ui",
+		requires = { "mfusseneger/nvim-dap" },
+	}) -- A simple UI out of the box
 	use({ "theHamsta/nvim-dap-virtual-text" }) -- Virtual text for variables
 	use({ "nvim-telescope/telescope-dap.nvim" })
+	use({ "mxsdev/nvim-dap-vscode-js" })
+	use({
+		"microsoft/vscode-js-debug",
+		opt = true,
+		run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+	})
 
 	-- misc
 	use({ "nvim-telescope/telescope.nvim" }) -- Are you ready for a journey?
