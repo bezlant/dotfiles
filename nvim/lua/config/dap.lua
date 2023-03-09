@@ -9,8 +9,14 @@ vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignErro
 vim.api.nvim_command("au FileType dap-repl lua require('dap.ext.autocompl').attach()")
 dap.set_log_level("TRACE")
 
+local dap_vscode_js_ok, dap_vscode_js = pcall(require, "dap-vscode-js")
+if not dap_vscode_js_ok then
+	vim.notify("Dap-vscode-js not found please install it!")
+	return
+end
+
 -- Dap Setup
-require("dap-vscode-js").setup({
+dap_vscode_js.setup({
 	-- node_path = "node", -- Path of node executable. Defaults to $NODE_PATH, and then "node"
 	-- debugger_path = "(runtimedir)/site/pack/packer/opt/vscode-js-debug", -- Path to vscode-js-debug installation.
 	-- debugger_cmd = { "js-debug-adapter" }, -- Command to use to launch the debug server. Takes precedence over `node_path` and `debugger_path`.
@@ -21,20 +27,47 @@ require("dap-vscode-js").setup({
 })
 
 for _, language in ipairs({ "typescript", "javascript", "typescriptreact", "javascriptreact" }) do
-	require("dap").configurations[language] = {
-		{
-			type = "pwa-node",
-			request = "attach",
-			name = "Attach",
-			processId = require("dap.utils").pick_process,
-			cwd = "${workspaceFolder}",
-		},
+	dap.configurations[language] = {
 		{
 			type = "pwa-node",
 			request = "launch",
 			name = "Launch file",
 			program = "${file}",
 			cwd = "${workspaceFolder}",
+			skipFiles = { "<node_internals>/**" },
+			protocol = "inspector",
+			console = "integratedTerminal",
+			sourceMaps = true,
+			resolveSourceMapLocations = { "${workspaceFolder}/dist/**/*.js" },
+			runtimeExecutable = "ts-node",
+		},
+		{
+			type = "pwa-node",
+			request = "attach",
+			name = "Attach",
+			processId = require("dap.utils").pick_process,
+			cwd = "${workspaceFolder}",
+			skipFiles = { "<node_internals>/**" },
+			protocol = "inspector",
+			console = "integratedTerminal",
+			sourceMaps = true,
+			resolveSourceMapLocations = { "${workspaceFolder}/dist/**/*.js" },
+			runtimeExecutable = "ts-node",
+		},
+		{
+			type = "pwa-node",
+			request = "launch",
+			name = "Debug Jest Tests",
+			-- trace = true, -- include debugger info
+			runtimeExecutable = "node",
+			runtimeArgs = {
+				"./node_modules/jest/bin/jest.js",
+				"--runInBand",
+			},
+			rootPath = "${workspaceFolder}",
+			cwd = "${workspaceFolder}",
+			console = "integratedTerminal",
+			internalConsoleOptions = "neverOpen",
 		},
 	}
 end
