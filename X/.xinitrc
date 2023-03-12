@@ -8,28 +8,29 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
-    xrdb -merge $sysresources
+  xrdb -merge $sysresources
 
 fi
 
 if [ -f $sysmodmap ]; then
-    xmodmap $sysmodmap
+  xmodmap $sysmodmap
 fi
 
 if [ -f "$userresources" ]; then
-    xrdb -merge "$userresources"
+  xrdb -merge "$userresources"
 
 fi
 
 if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
+  xmodmap "$usermodmap"
 fi
 
 # start some nice programs
 feh --bg-fill --randomize ~/.wallpapers &
 clight &
-xautolock -time 15 -locker my3lock &
+xautolock -time 5 -locker my3lock &
 picom &
+caffeine &
 setxkbmap -option caps:escape
 setxkbmap -layout us,ru -option grp:alt_shift_toggle
 exec i3
