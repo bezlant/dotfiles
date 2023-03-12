@@ -3,6 +3,7 @@ return {
 		preferences = {
 			disableSuggestions = true,
 			quotePreference = "single",
+			importModuleSpecifier = "non-relative",
 		},
 	},
 	typescript = {
