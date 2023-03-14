@@ -145,6 +145,8 @@ return packer.startup(function(use)
 	use({ "benfowler/telescope-luasnip.nvim" })
 	use({ "ThePrimeagen/refactoring.nvim" })
 	use({ "rest-nvim/rest.nvim" })
+	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
+	use({ "jose-elias-alvarez/typescript.nvim" })
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
