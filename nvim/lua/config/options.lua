@@ -53,7 +53,7 @@ vim.cmd([[ set backspace=eol,start,indent]])
 vim.cmd([[ set shortmess+=c ]])
 
 -- Buffer behavior
-vim.cmd([[ set switchbuf=useopen,uselast,vsplit ]])
+vim.cmd([[ set switchbuf=useopen,uselast,usetab ]])
 
 -- Mouse for the normies
 vim.cmd([[set mouse=a]])
