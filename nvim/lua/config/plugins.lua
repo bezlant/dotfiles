@@ -137,7 +137,7 @@ return packer.startup(function(use)
 	use({ "danymat/neogen" }) -- Documentation generator
 	use({ "folke/todo-comments.nvim" }) -- todo, hack, warn, perf, note
 	use({ "Pocco81/true-zen.nvim" }) -- no distraction mode
-	use({ "nvim-treesitter/nvim-treesitter-context" })
+	use({ "nvim-treesitter/nvim-treesitter-context" }) -- Top line where am I at
 	use({ "MunifTanjim/prettier.nvim" })
 	use({ "windwp/nvim-ts-autotag" })
 	use({ "gpanders/editorconfig.nvim" })
@@ -147,6 +147,7 @@ return packer.startup(function(use)
 	use({ "rest-nvim/rest.nvim" })
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 	use({ "jose-elias-alvarez/typescript.nvim" })
+	use({ "lewis6991/gitsigns.nvim" })
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then

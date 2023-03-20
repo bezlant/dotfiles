@@ -12,32 +12,14 @@ local opts = { noremap = true }
 vim.g.mapleader = ","
 
 -- Disable arrow keys
-map("n", "<Up>", "<Nop>", opts)
-map("n", "<S-Up>", "<Nop>", opts)
-map("n", "<Down>", "<Nop>", opts)
-map("n", "<S-Down>", "<Nop>", opts)
-map("n", "<Left>", "<Nop>", opts)
-map("n", "<S-Left>", "<Nop>", opts)
-map("n", "<Right>", "<Nop>", opts)
-map("n", "<S-Right>", "<Nop>", opts)
-
-map("i", "<Up>", "<Nop>", opts)
-map("i", "<S-Up>", "<Nop>", opts)
-map("i", "<Down>", "<Nop>", opts)
-map("i", "<S-Down>", "<Nop>", opts)
-map("i", "<Left>", "<Nop>", opts)
-map("i", "<S-Left>", "<Nop>", opts)
-map("i", "<Right>", "<Nop>", opts)
-map("i", "<S-Right>", "<Nop>", opts)
-
-map("v", "<Up>", "<Nop>", opts)
-map("v", "<S-Up>", "<Nop>", opts)
-map("v", "<Down>", "<Nop>", opts)
-map("v", "<S-Down>", "<Nop>", opts)
-map("v", "<Left>", "<Nop>", opts)
-map("v", "<S-Left>", "<Nop>", opts)
-map("v", "<Right>", "<Nop>", opts)
-map("v", "<S-Right>", "<Nop>", opts)
+map({ "n", "i", "v" }, "<Up>", "<Nop>", opts)
+map({ "n", "i", "v" }, "<S-Up>", "<Nop>", opts)
+map({ "n", "i", "v" }, "<Down>", "<Nop>", opts)
+map({ "n", "i", "v" }, "<S-Down>", "<Nop>", opts)
+map({ "n", "i", "v" }, "<Left>", "<Nop>", opts)
+map({ "n", "i", "v" }, "<S-Left>", "<Nop>", opts)
+map({ "n", "i", "v" }, "<Right>", "<Nop>", opts)
+map({ "n", "i", "v" }, "<S-Right>", "<Nop>", opts)
 
 -- Easier pane navigation
 map("n", "<C-h>", "<C-w>h", opts)
@@ -60,7 +42,7 @@ map("x", "<A-j>", "<cmd>m '>+1<CR>gv=gv", opts)
 map("x", "<A-k>", "<cmd>m '<-2<CR>gv=gv", opts)
 
 -- Map global register to '|'
-map("n", '"|', '"+', opts)
+map({ "n", "v" }, '"|', '"+', opts)
 
 -- Bbye & Buffers
 map("n", "<leader>bd", "<cmd>Bdelete! %<CR>", opts)
@@ -94,14 +76,11 @@ map("n", "<C-d>", "<C-d>zt", opts)
 map("n", "<C-u>", "<C-u>zt", opts)
 
 -- Easy yank to the system clipboard
-map("n", "<leader>y", '"+y', opts)
-map("v", "<leader>y", '"+y', opts)
+map({ "n", "v" }, "<leader>y", '"+y', opts)
 
 -- Easy paste from the system clipboard
-map("n", "<leader>p", '"+p', opts)
-map("v", "<leader>p", '"+p', opts)
-map("n", "<leader>P", '"+P', opts)
-map("v", "<leader>P", '"+P', opts)
+map({ "n", "v" }, "<leader>p", '"+p', opts)
+map({ "n", "v" }, "<leader>P", '"+P', opts)
 
 -- You need this
 map("n", "<leader>x", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)

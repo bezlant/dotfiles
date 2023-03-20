@@ -15,5 +15,12 @@
 	branch = auto
 	diff = auto
 	status = auto
+
 [init]
 	defaultBranch = main
+
+[rebase]
+	autoStash = true
+
+[diff]
+	tool = vimdiff
