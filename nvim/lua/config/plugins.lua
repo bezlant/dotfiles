@@ -148,6 +148,7 @@ return packer.startup(function(use)
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 	use({ "jose-elias-alvarez/typescript.nvim" })
 	use({ "lewis6991/gitsigns.nvim" })
+	use({ "krivahtoo/silicon.nvim", run = "./install.sh" })
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
