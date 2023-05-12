@@ -6,6 +6,7 @@ root = true
 
 [*]
 indent_size = 2
+quote_type = single
 
 [*.txt]
 indent_style = tab

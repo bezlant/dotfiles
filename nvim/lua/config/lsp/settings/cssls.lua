@@ -3,7 +3,7 @@ return {
 		css = {
 			validate = false,
 			lint = {
-				unknownAtRules = "ignore",
+				unknownAtRules = 'ignore',
 			},
 		},
 	},

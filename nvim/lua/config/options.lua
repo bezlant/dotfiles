@@ -1,13 +1,13 @@
 local options = {
 	backup = false,
 	cmdheight = 1,
-	completeopt = { "menu", "menuone", "noselect" },
-	sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal",
+	completeopt = { 'menu', 'menuone', 'noselect' },
+	sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal',
 	conceallevel = 0,
 	cursorline = true,
 	expandtab = true,
-	fileencoding = "utf-8",
-	guifont = "monospace:h17",
+	fileencoding = 'utf-8',
+	guifont = 'monospace:h17',
 	hlsearch = true,
 	ignorecase = true,
 	infercase = true,
@@ -20,7 +20,7 @@ local options = {
 	showmode = false,
 	showtabline = 1,
 	sidescrolloff = 6,
-	signcolumn = "yes",
+	signcolumn = 'yes',
 	smartcase = true,
 	smartindent = true,
 	autoindent = true,
@@ -36,7 +36,7 @@ local options = {
 	splitright = true,
 	incsearch = true,
 	linebreak = true,
-	foldmarker = "{,}",
+	foldmarker = '{,}',
 }
 
 for key, value in pairs(options) do
@@ -61,65 +61,23 @@ vim.cmd([[set mouse=a]])
 -- Autocommands
 -- Return to the previous location in the file on open
 vim.api.nvim_create_autocmd(
-	"BufReadPost",
+	'BufReadPost',
 	{ command = [[if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]] }
 )
 
 -- Autoread buffer on an external change
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, { command = "checktime" })
+vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter' }, { command = 'checktime' })
 
 -- Easily close useless buffers
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "sqls_output", "help", "startuptime", "qf", "lspinfo", "httpRequest" },
+vim.api.nvim_create_autocmd('FileType', {
+	pattern = { 'sqls_output', 'help', 'startuptime', 'qf', 'lspinfo', 'httpRequest' },
 	command = [[ nnoremap <buffer><silent> q :close<CR> ]],
 })
 
-vim.api.nvim_create_autocmd("FileType", { pattern = { "man" }, command = [[ nnoremap <buffer><silent> q :quit<CR> ]] })
+vim.api.nvim_create_autocmd('FileType', { pattern = { 'man' }, command = [[ nnoremap <buffer><silent> q :quit<CR> ]] })
 
 -- Fix that god damn formatoptions (for some reason have to do it on every BufEnter)
 -- Prevent annoying comment continuation when inserting a new line with 'O'
-vim.api.nvim_create_autocmd("BufEnter", {
-	command = "set formatoptions-=cro",
+vim.api.nvim_create_autocmd('BufEnter', {
+	command = 'set formatoptions-=cro',
 })
-
--- Set numbers depending on the mode
-vim.cmd([[
-    augroup numbertoggle
-      autocmd!
-      autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
-      autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
-    augroup END
-]])
-
--- Adjust padding in Alacritty
--- function Sad(line_nr, from, to, fname)
--- 	vim.cmd(string.format("silent !sed -i'' -e '%ss/%s/%s/g' %s", line_nr, from, to, fname))
--- end
---
--- function IncreasePadding()
--- 	Sad("9", 0, 5, "~/.config/alacritty/alacritty.yml")
--- 	Sad("10", 0, 5, "~/.config/alacritty/alacritty.yml")
--- end
---
--- function DecreasePadding()
--- 	Sad("9", 5, 0, "~/.config/alacritty/alacritty.yml")
--- 	Sad("10", 5, 0, "~/.config/alacritty/alacritty.yml")
--- end
---
--- vim.cmd([[
---   augroup ChangeAlacrittyPadding
---    au!
---    au VimEnter * lua DecreasePadding()
---    au VimLeavePre * lua IncreasePadding()
---   augroup END
--- ]])
---
--- vim.cmd([[
--- augroup CursorLine
---     au!
---     au VimEnter * setlocal cursorline
---     au WinEnter * setlocal cursorline
---     au BufWinEnter * setlocal cursorline
---     au WinLeave * setlocal nocursorline
--- augroup END
--- ]])

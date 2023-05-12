@@ -1,10 +1,10 @@
-local mason_ok, mason = pcall(require, "mason")
+local mason_ok, mason = pcall(require, 'mason')
 if not mason_ok then
 	vim.notify("can't load Mason plugin :(")
 	return
 end
 
-local lps_installer_ok, lsp_installer = pcall(require, "mason-lspconfig")
+local lps_installer_ok, lsp_installer = pcall(require, 'mason-lspconfig')
 if not lps_installer_ok then
 	vim.notify("can't load nvim-lsp-installer plugin :(")
 	return
@@ -13,33 +13,26 @@ end
 mason.setup({
 	ui = {
 		icons = {
-			package_installed = "✓",
-			package_pending = "➜",
-			package_uninstalled = "✗",
+			package_installed = '✓',
+			package_pending = '➜',
+			package_uninstalled = '✗',
 		},
 	},
 })
 
 local servers = {
-	"sqls",
-	"gopls",
-	"clangd",
-	"lua_ls",
-	"bashls",
-	"cmake",
-	"marksman",
-	-- "omnisharp",
-	"cssmodules_ls",
-	"jsonls",
-	"cssls",
-	"tailwindcss",
-	"stylelint_lsp",
-	"html",
-	"tsserver",
-	"eslint",
-	"yamlls",
-	"solc",
-	"prismals",
+	'marksman',
+	'bashls',
+	'cssls',
+	'cssmodules_ls',
+	'eslint',
+	'html',
+	'jsonls',
+	'lua_ls',
+	'stylelint_lsp',
+	'tailwindcss',
+	'prismals',
+	-- "sqls",
 }
 
 lsp_installer.setup({
@@ -47,7 +40,7 @@ lsp_installer.setup({
 	ensure_installed = servers,
 })
 
-local lsp_config_ok, lspconfig = pcall(require, "lspconfig")
+local lsp_config_ok, lspconfig = pcall(require, 'lspconfig')
 
 if not lsp_config_ok then
 	vim.notify("can't load lspconfig plugin :(")
@@ -56,20 +49,20 @@ end
 
 for _, server in pairs(servers) do
 	local opts = {
-		on_attach = require("config.lsp.handlers").on_attach,
-		capabilities = require("config.lsp.handlers").capabilities,
+		on_attach = require('config.lsp.handlers').on_attach,
+		capabilities = require('config.lsp.handlers').capabilities,
 	}
 
-	server = vim.split(server, "@")[1]
+	server = vim.split(server, '@')[1]
 
-	local has_custom_opts, custom_opts = pcall(require, "config.lsp.settings." .. server)
+	local has_custom_opts, custom_opts = pcall(require, 'config.lsp.settings.' .. server)
 
 	if has_custom_opts then
-		opts = vim.tbl_deep_extend("force", custom_opts, opts)
+		opts = vim.tbl_deep_extend('force', custom_opts, opts)
 	end
 
 	lspconfig[server].setup(opts)
 end
 
-require("config.lsp.handlers").setup()
-require("config.lsp.null-ls")
+require('config.lsp.handlers').setup()
+require('config.lsp.null-ls')

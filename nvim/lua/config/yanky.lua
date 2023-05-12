@@ -1,4 +1,4 @@
-local ok, yanky = pcall(require, "yanky")
+local ok, yanky = pcall(require, 'yanky')
 if not ok then
 	vim.notify("Can't load yanky plugin, please make sure it's installed")
 	return

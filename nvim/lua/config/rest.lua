@@ -1,6 +1,6 @@
-local status_ok, rest = pcall(require, "rest-nvim")
+local status_ok, rest = pcall(require, 'rest-nvim')
 if not status_ok then
-	vim.notify("Rest-nvim is not installed or has problems in config:(")
+	vim.notify('Rest-nvim is not installed or has problems in config:(')
 	return
 end
 
@@ -26,15 +26,15 @@ rest.setup({
 		-- executables or functions for formatting response body [optional]
 		-- set them to false if you want to disable them
 		formatters = {
-			json = "jq",
+			json = 'jq',
 			html = function(body)
-				return vim.fn.system({ "tidy", "-i", "-q", "-" }, body)
+				return vim.fn.system({ 'tidy', '-i', '-q', '-' }, body)
 			end,
 		},
 	},
 	-- Jump to request line on run
 	jump_to_request = false,
-	env_file = ".env",
+	env_file = '.env',
 	custom_dynamic_variables = {},
 	yank_dry_run = true,
 })

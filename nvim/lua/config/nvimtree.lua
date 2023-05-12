@@ -1,4 +1,4 @@
-local status_ok, nvimtree = pcall(require, "nvim-tree")
+local status_ok, nvimtree = pcall(require, 'nvim-tree')
 if not status_ok then
 	vim.notify("Can't load nvim-tree")
 end
@@ -19,10 +19,10 @@ nvimtree.setup({
 	diagnostics = {
 		enable = true,
 		icons = {
-			hint = "",
-			info = "",
-			warning = "",
-			error = "",
+			hint = '',
+			info = '',
+			warning = '',
+			error = '',
 		},
 	},
 	update_focused_file = {
@@ -31,46 +31,46 @@ nvimtree.setup({
 	renderer = {
 		add_trailing = false,
 		group_empty = true,
-		root_folder_modifier = ":~",
+		root_folder_modifier = ':~',
 
 		indent_markers = {
 			enable = true,
 			icons = {
-				corner = "└",
-				edge = "│",
-				item = "│",
-				none = " ",
+				corner = '└',
+				edge = '│',
+				item = '│',
+				none = ' ',
 			},
 		},
 
 		icons = {
 			webdev_colors = true,
 			glyphs = {
-				default = "",
-				symlink = "",
+				default = '',
+				symlink = '',
 				folder = {
-					default = "",
-					open = "",
-					empty = "",
-					empty_open = "",
-					symlink = "",
+					default = '',
+					open = '',
+					empty = '',
+					empty_open = '',
+					symlink = '',
 				},
 				git = {
-					unstaged = "",
-					staged = "S",
-					unmerged = "",
-					renamed = "➜",
-					deleted = "",
-					untracked = "U",
-					ignored = "◌",
+					unstaged = '',
+					staged = 'S',
+					unmerged = '',
+					renamed = '➜',
+					deleted = '',
+					untracked = 'U',
+					ignored = '◌',
 				},
 			},
 		},
 		special_files = {
-			"Makefile",
-			"build/",
-			"CMakeLists.txt",
-			"CMakeLists",
+			'Makefile',
+			'build/',
+			'CMakeLists.txt',
+			'CMakeLists',
 		},
 	},
 	filters = {

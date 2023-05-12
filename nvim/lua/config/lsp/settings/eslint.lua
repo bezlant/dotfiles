@@ -2,7 +2,7 @@ return {
 	codeAction = {
 		disableRuleComment = {
 			enable = true,
-			location = "separateLine",
+			location = 'separateLine',
 		},
 		showDocumentation = {
 			enable = true,
@@ -10,18 +10,18 @@ return {
 	},
 	codeActionOnSave = {
 		enable = false,
-		mode = "all",
+		mode = 'all',
 	},
 	format = true,
-	nodePath = "",
-	onIgnoredFiles = "off",
-	packageManager = "npm",
+	nodePath = '',
+	onIgnoredFiles = 'off',
+	packageManager = 'npm',
 	quiet = false,
 	rulesCustomizations = {},
-	run = "onType",
+	run = 'onType',
 	useESLintClass = false,
-	validate = "on",
+	validate = 'on',
 	workingDirectory = {
-		mode = "location",
+		mode = 'location',
 	},
 }

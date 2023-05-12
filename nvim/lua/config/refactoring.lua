@@ -1,6 +1,6 @@
-local status_ok, refactoring = pcall(require, "refactoring")
+local status_ok, refactoring = pcall(require, 'refactoring')
 if not status_ok then
-	vim.notify("Telescope is not installed or has problems in config:(")
+	vim.notify('Telescope is not installed or has problems in config:(')
 	return
 end
 

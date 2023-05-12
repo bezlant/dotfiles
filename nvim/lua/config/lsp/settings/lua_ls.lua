@@ -2,8 +2,8 @@ return {
 	settings = {
 		Lua = {
 			runtime = {
-				version = "LuaJIT",
-				path = vim.split(package.path, ";"),
+				version = 'LuaJIT',
+				path = vim.split(package.path, ';'),
 			},
 
 			hint = {
@@ -12,13 +12,13 @@ return {
 
 			diagnostics = {
 				enable = true,
-				globals = { "vim" },
+				globals = { 'vim' },
 			},
 
 			workspace = {
 				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.stdpath("config") .. "/lua"] = true,
+					[vim.fn.expand('$VIMRUNTIME/lua')] = true,
+					[vim.fn.stdpath('config') .. '/lua'] = true,
 				},
 			},
 		},

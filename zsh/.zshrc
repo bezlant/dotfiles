@@ -8,7 +8,8 @@ export ZSH="$HOME/.config/zsh"
 
 # Theme & Plugins
 ZSH_THEME="robbyrussell"
-plugins=(vi-mode zsh-syntax-highlighting colored-man-pages)
+source ~/.config/zsh/themes/catppuccin_latte-zsh-syntax-highlighting.zsh
+plugins=(vi-mode zsh-syntax-highlighting colored-man-pages zsh-autosuggestions)
 
 # Runtime script
 source $ZSH/zsh_it.sh
@@ -18,7 +19,6 @@ alias vim='nvim'
 alias vi='nvim'
 alias c='xsel --clipboard --input'
 alias p='xsel --clipboard --output'
-alias rr='ranger'
 alias ll="exa -l -g --icons"
 alias la="ll -a"
 alias ls="exa --icons -F --sort=name --oneline"
@@ -37,14 +37,12 @@ alias wiki='wikit'
 alias zshrc='vim ~/.zshrc'
 alias bmake='bear -- make'
 alias tsm='transmission-remote'
-alias db='dotnet build'
-alias dr='dotnet run'
 alias gcnv='git commit --no-verify'
 alias gpnv='git push --no-verify'
+alias wimg="wezterm imgcat"
 
 # Exports
 export GPG_TTY=$(tty)
-export LIBGL_ALWAYS_SOFTWARE=1 alacritty
 export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR=nvim
 export VISUAL=nvim
@@ -81,7 +79,7 @@ if [[ "$OSTYPE" == "darwin20.0" ]]; then
         fi
     fi
 else
-    export GOPATH="/home/tarticar/go"
+    export GOPATH="/home/tarticar/.go"
     export PATH="$PATH:/home/tarticar/.dotnet/tools"
     export PATH="$PATH:/home/tarticar/.local/bin"
     alias open='xdg-open'
@@ -93,3 +91,7 @@ fi
 export PATH="$GOPATH/bin:$PATH"
 eval $(thefuck --alias)
 export _JAVA_OPTIONS="-Dsun.java2d.dpiaware=true -Dsun.java2d.uiScale=2"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
