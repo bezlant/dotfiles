@@ -147,11 +147,10 @@ return packer.startup(function(use)
 	use({ 'rest-nvim/rest.nvim' })
 	use({ 'jose-elias-alvarez/typescript.nvim' })
 	use({ 'lewis6991/gitsigns.nvim' })
-	use({ 'krivahtoo/silicon.nvim', run = './install.sh' })
-	use({ 'rawnly/gist.nvim' })
-	use({ 'github/copilot.vim' })
 	use({ 'cpea2506/relative-toggle.nvim' })
 	use({ 'nvim-telescope/telescope-media-files.nvim' })
+	use({ 'ray-x/go.nvim' })
+	use({ 'ray-x/guihua.lua' }) -- recommended if need floating window support
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then

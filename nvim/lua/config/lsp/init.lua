@@ -32,6 +32,7 @@ local servers = {
 	'stylelint_lsp',
 	'tailwindcss',
 	'prismals',
+	'gopls',
 	-- "sqls",
 }
 
