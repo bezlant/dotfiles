@@ -147,9 +147,6 @@ bindsym 	$mod+period resize shrink width 5 px or 5 ppt
 # open my current book in the 5th workspace (v for view)
 bindsym $mod+v "workspace 5; gaps inner current set 0; bar mode hide; exec --no-startup-id zathura ~/Books/Current/*"  
 
-# open up bluetoothctl (m for manager)
-bindsym $mod+m  "exec --no-startup-id blueman-manager"
-
 # alt tab like behaviour
 bindsym $mod+Tab workspace back_and_forth
 
