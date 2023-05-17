@@ -136,21 +136,21 @@ return packer.startup(function(use)
 	use({ 'kylechui/nvim-surround' }) -- Life saver
 	use({ 'danymat/neogen' }) -- Documentation generator
 	use({ 'folke/todo-comments.nvim' }) -- todo, hack, warn, perf, note
-	use({ 'Pocco81/true-zen.nvim' }) -- no distraction mode
 	use({ 'nvim-treesitter/nvim-treesitter-context' }) -- Top line where am I at
 	use({ 'MunifTanjim/prettier.nvim' })
+	use({ 'MunifTanjim/eslint.nvim' })
 	use({ 'windwp/nvim-ts-autotag' })
 	use({ 'gpanders/editorconfig.nvim' })
 	use({ 'nanotee/sqls.nvim' })
 	use({ 'benfowler/telescope-luasnip.nvim' })
-	use({ 'ThePrimeagen/refactoring.nvim' })
-	use({ 'rest-nvim/rest.nvim' })
 	use({ 'jose-elias-alvarez/typescript.nvim' })
 	use({ 'lewis6991/gitsigns.nvim' })
 	use({ 'cpea2506/relative-toggle.nvim' })
 	use({ 'nvim-telescope/telescope-media-files.nvim' })
-	use({ 'ray-x/go.nvim' })
-	use({ 'ray-x/guihua.lua' }) -- recommended if need floating window support
+	use({
+		'ray-x/go.nvim',
+		requires = { 'ray-x/guihua.lua' },
+	})
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then

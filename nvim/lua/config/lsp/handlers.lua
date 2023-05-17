@@ -1,8 +1,4 @@
-local ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
-if not ok then
-	vim.notify("Can't load the cmp_nvim_lsp plugin! :(")
-	return
-end
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
 local border_opts = {
 	focusable = true,
@@ -77,14 +73,6 @@ M.on_attach = function(client, bufnr)
 	end
 
 	lsp_keymaps()
-
-	if client.name == 'tsserver' then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-
-	if client.name == 'eslint' then
-		client.server_capabilities.documentFormattingProvider = true
-	end
 
 	if client.name == 'sqls' then
 		client.server_capabilities.documentFormattingProvider = false

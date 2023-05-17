@@ -90,23 +90,6 @@ dap.configurations.cpp = {
 
 dap.configurations.c = dap.configurations.cpp
 
-dap.adapters.coreclr = {
-	type = 'executable',
-	command = '/usr/bin/netcoredbg',
-	args = { '--interpreter=vscode' },
-}
-
-dap.configurations.cs = {
-	{
-		type = 'coreclr',
-		name = 'launch - netcoredbg',
-		request = 'launch',
-		program = function()
-			return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/net6.0/', 'file')
-		end,
-	},
-}
-
 local dapui_ok, dapui = pcall(require, 'dapui')
 if not dapui_ok then
 	vim.notify('Dapui not found please install it!')

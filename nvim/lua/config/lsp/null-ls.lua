@@ -1,21 +1,15 @@
-local ok, null_ls = pcall(require, 'null-ls')
-if not ok then
-	vim.notify("Can't load null-ls, please install it")
-	return
-end
+local null_ls = require('null-ls')
 
-local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
-	debug = false,
+	debug = true,
 	sources = {
 		require('typescript.extensions.null-ls.code-actions'),
 		formatting.stylua,
 		formatting.shfmt,
 		formatting.goimports,
-		formatting.prettierd,
 		formatting.sqlfluff.with({
 			extra_args = { '--dialect', 'postgres' },
 		}),
@@ -31,16 +25,28 @@ null_ls.setup({
 			},
 		}),
 	},
-	on_attach = function(client, bufnr)
-		if client.supports_method('textDocument/formatting') then
-			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			vim.api.nvim_create_autocmd('BufWritePre', {
-				group = augroup,
-				buffer = bufnr,
-				callback = function()
-					vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = 2000 })
-				end,
-			})
-		end
-	end,
+})
+
+require('eslint').setup({
+	bin = 'eslint_d',
+	code_actions = {
+		enable = true,
+		apply_on_save = {
+			enable = true,
+			types = { 'directive', 'problem', 'suggestion', 'layout' },
+		},
+		disable_rule_comment = {
+			enable = true,
+			location = 'separate_line',
+		},
+	},
+	diagnostics = {
+		enable = true,
+		report_unused_disable_directives = false,
+		run_on = 'save',
+	},
+})
+
+require('prettier').setup({
+	bin = 'prettierd',
 })

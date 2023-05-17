@@ -101,13 +101,6 @@ map(
 	opts
 )
 
-map(
-	'n',
-	'<leader>f',
-	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ previewer = false, layout_config = { height = 0.2 }}))<cr>",
-	opts
-)
-
 map('n', '<leader>ff', '<cmd>Telescope find_files hidden=true<cr>', opts)
 map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opts)
@@ -117,7 +110,6 @@ map('n', '<leader>ft', '<cmd>TodoTelescope<cr>', opts)
 map('n', '<leader>fs', '<cmd>Telescope luasnip<cr>', opts)
 map('n', '<leader>fy', '<cmd>Telescope yank_history<cr>', opts)
 map('n', '<leader>fo', '<cmd>Telescope vim_options<cr>', opts)
-map('v', '<leader>fr', "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", { noremap = true })
 map('n', '<leader>fi', '<cmd>Telescope media_files<cr>', opts)
 
 -- NvimTree
@@ -139,9 +131,6 @@ map('n', '<leader>7', "<cmd>lua require('bufferline').go_to_buffer(7, true)<cr>"
 map('n', '<leader>8', "<cmd>lua require('bufferline').go_to_buffer(8, true)<cr>", opts)
 map('n', '<leader>9', "<cmd>lua require('bufferline').go_to_buffer(9, true)<cr>", opts)
 map('n', '<leader>$', "<cmd>lua require('bufferline').go_to_buffer(-1, true)<cr>", opts)
-
--- Zen
-map('n', '<leader>z', '<cmd>TZAtaraxis<CR>', opts)
 
 -- Yanky
 map('x', 'y', '<Plug>(YankyYank)', {})
@@ -174,67 +163,3 @@ map('n', '<leader>\\', "<cmd>lua require'dapui'.toggle()<cr>", opts)
 
 -- Neogen (Doxxygen)
 map('n', '<leader>n', '<cmd>Neogen func<cr>', opts)
-
--- Refactoring-- Remaps for the refactoring operations currently offered by the plugin
-map(
-	'v',
-	'<leader>re',
-	[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
-	{ noremap = true, silent = true, expr = false }
-)
-map(
-	'v',
-	'<leader>rf',
-	[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]],
-	{ noremap = true, silent = true, expr = false }
-)
-map(
-	'v',
-	'<leader>rv',
-	[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]],
-	{ noremap = true, silent = true, expr = false }
-)
-map(
-	'v',
-	'<leader>ri',
-	[[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
-	{ noremap = true, silent = true, expr = false }
-)
-
--- Extract block doesn't need visual mode
-map(
-	'n',
-	'<leader>rb',
-	[[ <Cmd>lua require('refactoring').refactor('Extract Block')<CR>]],
-	{ noremap = true, silent = true, expr = false }
-)
-
-map(
-	'n',
-	'<leader>rbf',
-	[[ <Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>]],
-	{ noremap = true, silent = true, expr = false }
-)
-
--- Inline variable can also pick up the identifier currently under the cursor without visual mode
-map(
-	'n',
-	'<leader>ri',
-	[[ <Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
-	{ noremap = true, silent = true, expr = false }
-)
-
--- You can also use below = true here to to change the position of the printf
--- statement (or set two remaps for either one). This remap must be made in normal mode.
-map('n', '<leader>rp', ":lua require('refactoring').debug.printf({below = false})<CR>", opts)
-
--- Remap in normal mode and passing { normal = true } will automatically find the variable under the cursor and print it
-map('n', '<leader>rd', ":lua require('refactoring').debug.print_var({ normal = true })<CR>", opts)
--- Remap in visual mode will print whatever is in the visual selection
-map('v', '<leader>rd', ":lua require('refactoring').debug.print_var({})<CR>", opts)
-
--- Cleanup function: this remap should be made in normal mode
-map('n', '<leader>rc', ":lua require('refactoring').debug.cleanup({})<CR>", opts)
-
--- Rest nvim
-map('n', '<C-q>', '<Plug>RestNvim', {})
