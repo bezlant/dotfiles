@@ -12,7 +12,9 @@ return {
 		enable = false,
 		mode = 'all',
 	},
-	format = true,
+	format = {
+		enable = true,
+	},
 	nodePath = '',
 	onIgnoredFiles = 'off',
 	packageManager = 'npm',

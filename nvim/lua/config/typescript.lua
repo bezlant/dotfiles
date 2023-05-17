@@ -13,7 +13,7 @@ typescript.setup({
 			init_options = {
 				preferences = {
 					disableSuggestions = false,
-					quotePreference = 'single',
+					quotePreference = 'auto',
 					importModuleSpecifier = 'non-relative',
 				},
 			},

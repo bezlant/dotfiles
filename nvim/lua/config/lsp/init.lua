@@ -33,6 +33,7 @@ local servers = {
 	'tailwindcss',
 	'prismals',
 	'gopls',
+	'golangci_lint_ls',
 	-- "sqls",
 }
 
