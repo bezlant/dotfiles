@@ -1,0 +1,9 @@
+#!/bin/bash
+
+overlay=/usr/share/pixmaps/floppa.png
+
+scrot -o /tmp/currentworkspace.png
+convert /tmp/currentworkspace.png -blur 0x4 /tmp/currentworkspaceblur.png
+composite -gravity southeast $overlay /tmp/currentworkspaceblur.png /tmp/lockbackground.png
+i3lock -i /tmp/lockbackground.png
+

@@ -3,7 +3,7 @@ exec_always --no-startup-id "$HOME/.config/i3/tray.sh"
 set $mod Mod4
 
 font pango:monospace 8
-
+smart_borders on
 focus_follows_mouse no
 
 # Use pactl to adjust volume in PulseAudio.
@@ -120,11 +120,11 @@ set $term --no-startup-id $TERMINAL
 bindsym $mod+Escape		        workspace prev
 
 # lock screen
-bindsym $mod+Shift+q		    exec "my3lock"
+bindsym $mod+Shift+q		    exec --no-startup-id  ~/.local/bin/my3lock
 
 # default gaps 
 for_window [class="^.*"] border pixel 2
-gaps inner 5
+gaps inner 0
 
 # resize gaps
 bindsym $mod+Shift+d		    gaps inner current set 0; gaps outer current set 0
