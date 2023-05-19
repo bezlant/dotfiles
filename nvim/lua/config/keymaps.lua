@@ -46,8 +46,8 @@ map({ 'n', 'v' }, '"|', '"+', opts)
 
 -- Bbye & Buffers
 map('n', '<leader>bd', '<cmd>Bdelete! %<CR>', opts)
-map('n', '<leader>h', '<cmd>bprevious<cr>zt', opts)
-map('n', '<leader>l', '<cmd>bnext<cr>zt', opts)
+map('n', '<leader>h', '<cmd>bprevious<cr>zz', opts)
+map('n', '<leader>l', '<cmd>bnext<cr>zz', opts)
 map('n', '<leader>ba', '<cmd>bufdo :Bdelete<CR>', opts)
 map('n', '<leader>bo', '<cmd>%bd|e#|bd#<CR>', opts)
 
@@ -56,7 +56,7 @@ map('n', '<leader>tn', '<cmd>tabnew<cr>', opts)
 map('n', '<leader>to', '<cmd>tabonly<cr>', opts)
 map('n', '<leader>tc', '<cmd>tabclose<cr>', opts)
 map('n', '<leader>tm', '<cmd>tabmove<cr>', opts)
-map('n', '<leader>t<leader>', '<cmd>tabnext<cr>zt', opts)
+map('n', '<leader>t<leader>', '<cmd>tabnext<cr>zz', opts)
 
 -- Custom
 -- Save on leader + w
@@ -72,8 +72,8 @@ map('n', '0', '^', opts)
 -- map("n", "Y", "yg$", opts)
 
 -- Scrolling improved (Neoscroll fixes this)
-map('n', '<C-d>', '<C-d>zt', opts)
-map('n', '<C-u>', '<C-u>zt', opts)
+map('n', '<C-d>', '<C-d>zz', opts)
+map('n', '<C-u>', '<C-u>zz', opts)
 
 -- Easy yank to the system clipboard
 map({ 'n', 'v' }, '<leader>y', '"+y', opts)
@@ -86,8 +86,8 @@ map({ 'n', 'v' }, '<leader>P', '"+P', opts)
 map('n', '<leader>x', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', opts)
 
 -- Search improved
-map('n', 'n', 'nztzv', opts)
-map('n', 'N', 'Nztzv', opts)
+map('n', 'n', 'nzzzv', opts)
+map('n', 'N', 'Nzzzv', opts)
 
 -- Get to the current folder
 map('n', '<leader>cd', '<cmd>cd %:p:h<cr><cmd>:pwd<cr>', opts)

@@ -1,4 +1,7 @@
+local lspconfig = require('lspconfig')
+
 return {
+	root_dir = lspconfig.util.root_pattern('tsconfig.base.json', '.eslintrc.json', '.eslint*'),
 	codeAction = {
 		disableRuleComment = {
 			enable = true,
@@ -9,7 +12,7 @@ return {
 		},
 	},
 	codeActionOnSave = {
-		enable = false,
+		enable = true,
 		mode = 'all',
 	},
 	format = {

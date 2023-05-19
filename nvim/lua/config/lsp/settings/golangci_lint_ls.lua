@@ -1,8 +1,4 @@
-local lpsconfig_ok, lspconfig = pcall(require, 'lspconfig')
-if not lpsconfig_ok then
-	vim.notify("can't load lspconfig plugin :(")
-	return
-end
+local lspconfig = require('lspconfig')
 
 return {
 	default_config = {

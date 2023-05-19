@@ -137,8 +137,6 @@ return packer.startup(function(use)
 	use({ 'danymat/neogen' }) -- Documentation generator
 	use({ 'folke/todo-comments.nvim' }) -- todo, hack, warn, perf, note
 	use({ 'nvim-treesitter/nvim-treesitter-context' }) -- Top line where am I at
-	use({ 'MunifTanjim/prettier.nvim' })
-	use({ 'MunifTanjim/eslint.nvim' })
 	use({ 'windwp/nvim-ts-autotag' })
 	use({ 'gpanders/editorconfig.nvim' })
 	use({ 'nanotee/sqls.nvim' })
@@ -151,6 +149,7 @@ return packer.startup(function(use)
 		'ray-x/go.nvim',
 		requires = { 'ray-x/guihua.lua' },
 	})
+	use({ 'lukas-reineke/indent-blankline.nvim' })
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then

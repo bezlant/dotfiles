@@ -1,7 +1,7 @@
 return {
 	settings = {
 		css = {
-			validate = false,
+			validate = true,
 			lint = {
 				unknownAtRules = 'ignore',
 			},
