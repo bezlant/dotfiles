@@ -73,6 +73,7 @@ M.on_attach = function(client, bufnr)
 	end
 
 	lsp_keymaps()
+
 	if client.name == 'eslint' then
 		client.server_capabilities.documentFormattingProvider = true
 		vim.api.nvim_create_autocmd('BufWritePre', {

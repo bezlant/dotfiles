@@ -150,6 +150,7 @@ return packer.startup(function(use)
 		requires = { 'ray-x/guihua.lua' },
 	})
 	use({ 'lukas-reineke/indent-blankline.nvim' })
+	use({ 'MunifTanjim/prettier.nvim' })
 
 	-- Autoconfigure after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
