@@ -1,4 +1,4 @@
-** I have permanently moved to OSX & now my [nvim-config lives here](https://github.com/bezlant/nvim) & [system config here](https://github.com/bezlant/.config) **
+**I have permanently moved to OSX & now my [nvim-config lives here](https://github.com/bezlant/nvim) & [system config here](https://github.com/bezlant/.config)**
 
 # bezlant.dotfiles
 
